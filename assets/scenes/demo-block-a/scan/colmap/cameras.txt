@@ -1,0 +1,5 @@
+# SIMULATED_FROM_SYNTHETIC_MODEL: NOT produced by COLMAP. Format follows COLMAP text model.
+# Camera list with one line of data per camera:
+#   CAMERA_ID, MODEL, WIDTH, HEIGHT, PARAMS[]
+# Number of cameras: 1
+1 SIMPLE_PINHOLE 1280 720 880.8844 640 360

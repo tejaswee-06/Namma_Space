@@ -1,0 +1,333 @@
+{
+ "label": "SIMULATED_FROM_SYNTHETIC_MODEL",
+ "is_real_site_capture": false,
+ "is_colmap_output": false,
+ "method": "numpy depth-buffer visibility + photogrammetry-like feature/triangulation/noise model; see module docstring",
+ "frames": 604,
+ "registered_frames": 444,
+ "registration_rate": 0.735,
+ "frame_tags": {
+  "walk": 390,
+  "sweep": 180,
+  "stairs": 34
+ },
+ "candidate_surface_points": 3000000,
+ "feature_points": 1315606,
+ "triangulated_points": 453299,
+ "dense_points": 370417,
+ "sparse_points": 21381,
+ "noise_model": "sigma = (0.003 + 0.0015*z^2)/sqrt(min(tracks,6)) m; 0.4% gross outliers; colour jitter",
+ "dropout_model": "p(feature) from texture luminance std; glass excluded; >=2 views, >=~2deg triangulation; |cos(incidence)|>0.25",
+ "pose_noise": "1.5 cm position, 0.1 deg rotation (in metric units before arbitrary scaling)",
+ "arbitrary_frame_scale_hidden": true,
+ "runtime_s": 175.2,
+ "mean_room_floor_coverage": 0.379,
+ "rooms": [
+  {
+   "room_id": "f0-stair-a",
+   "name": "Staircase A",
+   "floor": 0,
+   "points": 1928,
+   "points_per_m2_floor_area": 56.0,
+   "floor_coverage": 0.05,
+   "ceiling_coverage": 0.051,
+   "status": "poor"
+  },
+  {
+   "room_id": "f0-lift",
+   "name": "Lift",
+   "floor": 0,
+   "points": 1371,
+   "points_per_m2_floor_area": 311.6,
+   "floor_coverage": 0.406,
+   "ceiling_coverage": 0.141,
+   "status": "partial"
+  },
+  {
+   "room_id": "f0-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 0,
+   "points": 409,
+   "points_per_m2_floor_area": 23.8,
+   "floor_coverage": 0.029,
+   "ceiling_coverage": 0.026,
+   "status": "poor"
+  },
+  {
+   "room_id": "f0-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 0,
+   "points": 2453,
+   "points_per_m2_floor_area": 142.6,
+   "floor_coverage": 0.129,
+   "ceiling_coverage": 0.154,
+   "status": "poor"
+  },
+  {
+   "room_id": "f0-corridor",
+   "name": "Main Corridor",
+   "floor": 0,
+   "points": 35947,
+   "points_per_m2_floor_area": 356.6,
+   "floor_coverage": 0.876,
+   "ceiling_coverage": 0.806,
+   "status": "good"
+  },
+  {
+   "room_id": "f1-stair-a",
+   "name": "Staircase A",
+   "floor": 1,
+   "points": 3497,
+   "points_per_m2_floor_area": 101.7,
+   "floor_coverage": 0.132,
+   "ceiling_coverage": 0.099,
+   "status": "poor"
+  },
+  {
+   "room_id": "f1-lift",
+   "name": "Lift",
+   "floor": 1,
+   "points": 810,
+   "points_per_m2_floor_area": 184.1,
+   "floor_coverage": 0.203,
+   "ceiling_coverage": 0.141,
+   "status": "poor"
+  },
+  {
+   "room_id": "f1-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 1,
+   "points": 603,
+   "points_per_m2_floor_area": 35.1,
+   "floor_coverage": 0.044,
+   "ceiling_coverage": 0.029,
+   "status": "poor"
+  },
+  {
+   "room_id": "f1-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 1,
+   "points": 2474,
+   "points_per_m2_floor_area": 143.8,
+   "floor_coverage": 0.147,
+   "ceiling_coverage": 0.143,
+   "status": "poor"
+  },
+  {
+   "room_id": "f1-corridor",
+   "name": "Main Corridor",
+   "floor": 1,
+   "points": 40316,
+   "points_per_m2_floor_area": 400.0,
+   "floor_coverage": 0.906,
+   "ceiling_coverage": 0.922,
+   "status": "good"
+  },
+  {
+   "room_id": "f2-stair-a",
+   "name": "Staircase A",
+   "floor": 2,
+   "points": 3243,
+   "points_per_m2_floor_area": 94.3,
+   "floor_coverage": 0.14,
+   "ceiling_coverage": 0.077,
+   "status": "poor"
+  },
+  {
+   "room_id": "f2-lift",
+   "name": "Lift",
+   "floor": 2,
+   "points": 1306,
+   "points_per_m2_floor_area": 296.8,
+   "floor_coverage": 0.25,
+   "ceiling_coverage": 0.125,
+   "status": "poor"
+  },
+  {
+   "room_id": "f2-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 2,
+   "points": 784,
+   "points_per_m2_floor_area": 45.6,
+   "floor_coverage": 0.051,
+   "ceiling_coverage": 0.022,
+   "status": "poor"
+  },
+  {
+   "room_id": "f2-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 2,
+   "points": 1619,
+   "points_per_m2_floor_area": 94.1,
+   "floor_coverage": 0.121,
+   "ceiling_coverage": 0.103,
+   "status": "poor"
+  },
+  {
+   "room_id": "f2-corridor",
+   "name": "Main Corridor",
+   "floor": 2,
+   "points": 31348,
+   "points_per_m2_floor_area": 311.0,
+   "floor_coverage": 0.906,
+   "ceiling_coverage": 0.277,
+   "status": "good"
+  },
+  {
+   "room_id": "f0-seminar-a",
+   "name": "Seminar Hall A",
+   "floor": 0,
+   "points": 15286,
+   "points_per_m2_floor_area": 127.0,
+   "floor_coverage": 0.288,
+   "ceiling_coverage": 0.254,
+   "status": "poor"
+  },
+  {
+   "room_id": "f0-admin-office",
+   "name": "Administrative Office",
+   "floor": 0,
+   "points": 16462,
+   "points_per_m2_floor_area": 159.5,
+   "floor_coverage": 0.556,
+   "ceiling_coverage": 0.366,
+   "status": "partial"
+  },
+  {
+   "room_id": "f0-lobby",
+   "name": "Entrance Lobby & Reception",
+   "floor": 0,
+   "points": 16201,
+   "points_per_m2_floor_area": 134.6,
+   "floor_coverage": 0.37,
+   "ceiling_coverage": 0.361,
+   "status": "partial"
+  },
+  {
+   "room_id": "f0-commons",
+   "name": "Student Commons & Cafe",
+   "floor": 0,
+   "points": 21555,
+   "points_per_m2_floor_area": 156.6,
+   "floor_coverage": 0.531,
+   "ceiling_coverage": 0.422,
+   "status": "partial"
+  },
+  {
+   "room_id": "f0-help-desk",
+   "name": "Security & Help Desk",
+   "floor": 0,
+   "points": 12593,
+   "points_per_m2_floor_area": 244.1,
+   "floor_coverage": 0.721,
+   "ceiling_coverage": 0.605,
+   "status": "good"
+  },
+  {
+   "room_id": "f1-electronics-lab",
+   "name": "Electronics Lab 1",
+   "floor": 1,
+   "points": 13889,
+   "points_per_m2_floor_area": 115.4,
+   "floor_coverage": 0.279,
+   "ceiling_coverage": 0.319,
+   "status": "poor"
+  },
+  {
+   "room_id": "f1-telecom-lab",
+   "name": "Telecommunications Lab",
+   "floor": 1,
+   "points": 17407,
+   "points_per_m2_floor_area": 168.7,
+   "floor_coverage": 0.447,
+   "ceiling_coverage": 0.435,
+   "status": "partial"
+  },
+  {
+   "room_id": "f1-computer-lab",
+   "name": "Computer Lab",
+   "floor": 1,
+   "points": 16594,
+   "points_per_m2_floor_area": 160.8,
+   "floor_coverage": 0.426,
+   "ceiling_coverage": 0.396,
+   "status": "partial"
+  },
+  {
+   "room_id": "f1-faculty-offices",
+   "name": "Faculty Offices",
+   "floor": 1,
+   "points": 22785,
+   "points_per_m2_floor_area": 220.8,
+   "floor_coverage": 0.619,
+   "ceiling_coverage": 0.482,
+   "status": "good"
+  },
+  {
+   "room_id": "f1-project-lab",
+   "name": "Project Lab",
+   "floor": 1,
+   "points": 16463,
+   "points_per_m2_floor_area": 159.5,
+   "floor_coverage": 0.459,
+   "ceiling_coverage": 0.358,
+   "status": "partial"
+  },
+  {
+   "room_id": "f2-conference",
+   "name": "Conference Room",
+   "floor": 2,
+   "points": 14641,
+   "points_per_m2_floor_area": 121.6,
+   "floor_coverage": 0.43,
+   "ceiling_coverage": 0.109,
+   "status": "partial"
+  },
+  {
+   "room_id": "f2-dept-office",
+   "name": "Department Office",
+   "floor": 2,
+   "points": 14467,
+   "points_per_m2_floor_area": 140.2,
+   "floor_coverage": 0.533,
+   "ceiling_coverage": 0.109,
+   "status": "partial"
+  },
+  {
+   "room_id": "f2-iot-lab",
+   "name": "IoT Research Lab",
+   "floor": 2,
+   "points": 15502,
+   "points_per_m2_floor_area": 128.8,
+   "floor_coverage": 0.425,
+   "ceiling_coverage": 0.116,
+   "status": "partial"
+  },
+  {
+   "room_id": "f2-library",
+   "name": "Library & Reading Room",
+   "floor": 2,
+   "points": 16588,
+   "points_per_m2_floor_area": 137.8,
+   "floor_coverage": 0.441,
+   "ceiling_coverage": 0.106,
+   "status": "partial"
+  },
+  {
+   "room_id": "f2-lounge",
+   "name": "Terrace Lounge",
+   "floor": 2,
+   "points": 9984,
+   "points_per_m2_floor_area": 145.1,
+   "floor_coverage": 0.469,
+   "ceiling_coverage": 0.129,
+   "status": "partial"
+  }
+ ],
+ "limitations": [
+  "Not a measurement of a real place",
+  "Geometry visibility is exact; real SfM would also drop views for blur/exposure/parallax",
+  "Glass and mirrors are invisible rather than producing artefacts",
+  "No rolling shutter, lens distortion, or illumination change"
+ ]
+}

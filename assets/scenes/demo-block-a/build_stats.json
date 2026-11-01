@@ -1,0 +1,22 @@
+{
+ "visual": {
+  "bytes": 4474284,
+  "nodes": 178,
+  "meshes": 155,
+  "triangles": 51708,
+  "materials": 41,
+  "textures": 7
+ },
+ "collision": {
+  "bytes": 1031932,
+  "nodes": 589,
+  "meshes": 588,
+  "triangles": 7056,
+  "materials": 1,
+  "textures": 0
+ },
+ "colliders": 668,
+ "rooms": 30,
+ "pois": 29,
+ "lights": 39
+}

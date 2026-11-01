@@ -1,0 +1,63 @@
+{
+ "version": 1,
+ "status": "REGISTERED",
+ "coordinate_system": "building-local-y-up-v1",
+ "units": "metres",
+ "origin_description": "operator origin pick projected to the ground-floor surface; +X towards the axis pick",
+ "source_frame": "colmap-arbitrary",
+ "scale_factor": 1.8217130237781485,
+ "rotation_matrix": [
+  [
+   0.6563128499824259,
+   0.7536934087410893,
+   -0.03463652072860808
+  ],
+  [
+   -0.7090612184453728,
+   0.6318349821004388,
+   0.31307625890651863
+  ],
+  [
+   0.25784807822574335,
+   -0.1809165581542378,
+   0.9490961845571371
+  ]
+ ],
+ "translation_vector": [
+  6.8625879493093125,
+  -2.676562551511579,
+  -16.530021327370996
+ ],
+ "apply": "p_metric = scale_factor * rotation_matrix @ p_model + translation_vector",
+ "reference_measurements": {
+  "baseline_m": 30.032327600579098,
+  "validation": [
+   {
+    "measured_m": 10.797269294788459,
+    "registered_m": 10.7236,
+    "error_m": -0.0736,
+    "rel_error": -0.00682,
+    "pass": true
+   }
+  ]
+ },
+ "uncertainty": {
+  "scale_relative_1sigma": 0.0014089635916096697,
+  "note": "from pick noise only; excludes SfM drift"
+ },
+ "floor_height_model_units": 1.4692558688308175,
+ "estimated_up_model": [
+  -0.7090612184453728,
+  0.6318349821004388,
+  0.31307625890651863
+ ],
+ "operator": "simulated-operator",
+ "notes": "SIMULATED capture; picks emulated; tape distances taken from the synthetic model",
+ "timestamp_utc": "2026-11-01T18:04:54+00:00",
+ "metric_claims_allowed": true,
+ "simulation_residuals_vs_hidden_truth": {
+  "rms_m": 0.0767,
+  "p95_m": 0.1157,
+  "note": "only computable because the scan is simulated"
+ }
+}

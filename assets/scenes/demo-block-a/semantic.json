@@ -1,0 +1,2892 @@
+{
+ "building": {
+  "id": "bld-namma-demo",
+  "name": "NAMMA Demo Block A (synthetic)",
+  "floors": [
+   {
+    "id": "floor-0",
+    "level": 0,
+    "name": "Ground Floor",
+    "elevation_m": 0.0,
+    "ceiling_height_m": 3.3000000000000003
+   },
+   {
+    "id": "floor-1",
+    "level": 1,
+    "name": "First Floor",
+    "elevation_m": 3.6,
+    "ceiling_height_m": 3.3000000000000003
+   },
+   {
+    "id": "floor-2",
+    "level": 2,
+    "name": "Second Floor",
+    "elevation_m": 7.2,
+    "ceiling_height_m": 3.3000000000000003
+   }
+  ],
+  "footprint": {
+   "x": [
+    0,
+    36.0
+   ],
+   "z": [
+    0,
+    20.0
+   ]
+  }
+ },
+ "rooms": [
+  {
+   "id": "f0-stair-a",
+   "name": "Staircase A",
+   "floor": 0,
+   "category": "Stairs",
+   "kind": "stair",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "description": "Staircase A on the ground floor.",
+   "bounds": {
+    "x0": 14,
+    "x1": 18,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 34.4,
+   "door": {
+    "x": 16.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 16.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 16.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": false,
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 0.0,
+    "z": 8.1
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-lift",
+   "name": "Lift",
+   "floor": 0,
+   "category": "Lift",
+   "kind": "lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "description": "Lift on the ground floor.",
+   "bounds": {
+    "x0": 18,
+    "x1": 20,
+    "z0": 6.4,
+    "z1": 8.6
+   },
+   "area_m2": 4.4,
+   "door": {
+    "x": 19.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "slide"
+   },
+   "anchor": {
+    "x": 19.0,
+    "y": 0.0,
+    "z": 7.5
+   },
+   "entry_anchor": {
+    "x": 19.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 0,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "description": "Washroom (Men) on the ground floor.",
+   "bounds": {
+    "x0": 20,
+    "x1": 22,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 21.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 21.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 21.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 0,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "description": "Washroom (Women) on the ground floor.",
+   "bounds": {
+    "x0": 22,
+    "x1": 24,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 23.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 23.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 23.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-corridor",
+   "name": "Main Corridor",
+   "floor": 0,
+   "category": "Circulation",
+   "kind": "corridor",
+   "aliases": [
+    "hall",
+    "corridor",
+    "passage"
+   ],
+   "description": "Main Corridor on the ground floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 36.0,
+    "z0": 8.6,
+    "z1": 11.4
+   },
+   "area_m2": 100.8,
+   "door": null,
+   "anchor": {
+    "x": 18.0,
+    "y": 0.0,
+    "z": 10.0
+   },
+   "entry_anchor": {
+    "x": 18.0,
+    "y": 0.0,
+    "z": 8.6
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 18.0,
+    "y": 0.0,
+    "z": 10.0
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-stair-a",
+   "name": "Staircase A",
+   "floor": 1,
+   "category": "Stairs",
+   "kind": "stair",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "description": "Staircase A on the first floor.",
+   "bounds": {
+    "x0": 14,
+    "x1": 18,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 34.4,
+   "door": {
+    "x": 16.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 16.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 16.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": false,
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 3.6,
+    "z": 8.1
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-lift",
+   "name": "Lift",
+   "floor": 1,
+   "category": "Lift",
+   "kind": "lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "description": "Lift on the first floor.",
+   "bounds": {
+    "x0": 18,
+    "x1": 20,
+    "z0": 6.4,
+    "z1": 8.6
+   },
+   "area_m2": 4.4,
+   "door": {
+    "x": 19.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "slide"
+   },
+   "anchor": {
+    "x": 19.0,
+    "y": 3.6,
+    "z": 7.5
+   },
+   "entry_anchor": {
+    "x": 19.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 1,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "description": "Washroom (Men) on the first floor.",
+   "bounds": {
+    "x0": 20,
+    "x1": 22,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 21.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 21.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 21.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 1,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "description": "Washroom (Women) on the first floor.",
+   "bounds": {
+    "x0": 22,
+    "x1": 24,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 23.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 23.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 23.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-corridor",
+   "name": "Main Corridor",
+   "floor": 1,
+   "category": "Circulation",
+   "kind": "corridor",
+   "aliases": [
+    "hall",
+    "corridor",
+    "passage"
+   ],
+   "description": "Main Corridor on the first floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 36.0,
+    "z0": 8.6,
+    "z1": 11.4
+   },
+   "area_m2": 100.8,
+   "door": null,
+   "anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 10.0
+   },
+   "entry_anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 8.6
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 10.0
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-stair-a",
+   "name": "Staircase A",
+   "floor": 2,
+   "category": "Stairs",
+   "kind": "stair",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "description": "Staircase A on the second floor.",
+   "bounds": {
+    "x0": 14,
+    "x1": 18,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 34.4,
+   "door": {
+    "x": 16.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 16.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 16.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": false,
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 7.2,
+    "z": 8.1
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-lift",
+   "name": "Lift",
+   "floor": 2,
+   "category": "Lift",
+   "kind": "lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "description": "Lift on the second floor.",
+   "bounds": {
+    "x0": 18,
+    "x1": 20,
+    "z0": 6.4,
+    "z1": 8.6
+   },
+   "area_m2": 4.4,
+   "door": {
+    "x": 19.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "slide"
+   },
+   "anchor": {
+    "x": 19.0,
+    "y": 7.2,
+    "z": 7.5
+   },
+   "entry_anchor": {
+    "x": 19.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-wc-m",
+   "name": "Washroom (Men)",
+   "floor": 2,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "description": "Washroom (Men) on the second floor.",
+   "bounds": {
+    "x0": 20,
+    "x1": 22,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 21.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-wc-f",
+   "name": "Washroom (Women)",
+   "floor": 2,
+   "category": "Washroom",
+   "kind": "wc",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "description": "Washroom (Women) on the second floor.",
+   "bounds": {
+    "x0": 22,
+    "x1": 24,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 17.2,
+   "door": {
+    "x": 23.0,
+    "z": 8.6,
+    "width": 0.95,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 23.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 23.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-corridor",
+   "name": "Main Corridor",
+   "floor": 2,
+   "category": "Circulation",
+   "kind": "corridor",
+   "aliases": [
+    "hall",
+    "corridor",
+    "passage"
+   ],
+   "description": "Main Corridor on the second floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 36.0,
+    "z0": 8.6,
+    "z1": 11.4
+   },
+   "area_m2": 100.8,
+   "door": null,
+   "anchor": {
+    "x": 18.0,
+    "y": 7.2,
+    "z": 10.0
+   },
+   "entry_anchor": {
+    "x": 18.0,
+    "y": 7.2,
+    "z": 8.6
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 18.0,
+    "y": 7.2,
+    "z": 10.0
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-seminar-a",
+   "name": "Seminar Hall A",
+   "floor": 0,
+   "category": "Lecture",
+   "kind": "seminar",
+   "aliases": [
+    "lecture hall",
+    "auditorium",
+    "seminar",
+    "hall a"
+   ],
+   "description": "Tiered-seating style seminar hall with projection wall.",
+   "bounds": {
+    "x0": 0,
+    "x1": 14,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 7.0,
+    "z": 8.6,
+    "width": 1.8,
+    "type": "double"
+   },
+   "anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-admin-office",
+   "name": "Administrative Office",
+   "floor": 0,
+   "category": "Office",
+   "kind": "office",
+   "aliases": [
+    "admin",
+    "administration",
+    "office"
+   ],
+   "description": "Administrative Office on the ground floor.",
+   "bounds": {
+    "x0": 24,
+    "x1": 36,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 30.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 30.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 30.0,
+    "y": 0.0,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-lobby",
+   "name": "Entrance Lobby & Reception",
+   "floor": 0,
+   "category": "Entrance",
+   "kind": "lobby",
+   "aliases": [
+    "reception",
+    "lobby",
+    "main entrance",
+    "front desk",
+    "entrance"
+   ],
+   "description": "Main entrance, reception desk and waiting area.",
+   "bounds": {
+    "x0": 0,
+    "x1": 14,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 7.0,
+    "z": 11.4,
+    "width": 2.6,
+    "type": "arch"
+   },
+   "anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-commons",
+   "name": "Student Commons & Cafe",
+   "floor": 0,
+   "category": "Dining",
+   "kind": "commons",
+   "aliases": [
+    "cafe",
+    "cafeteria",
+    "canteen",
+    "food court",
+    "student commons"
+   ],
+   "description": "Informal seating, cafe counter and vending.",
+   "bounds": {
+    "x0": 14,
+    "x1": 30,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 137.6,
+   "door": {
+    "x": 22.0,
+    "z": 11.4,
+    "width": 2.4,
+    "type": "arch"
+   },
+   "anchor": {
+    "x": 22.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 22.0,
+    "y": 0.0,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 22.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f0-help-desk",
+   "name": "Security & Help Desk",
+   "floor": 0,
+   "category": "Service",
+   "kind": "helpdesk",
+   "aliases": [
+    "help desk",
+    "security",
+    "enquiry",
+    "information"
+   ],
+   "description": "Security & Help Desk on the ground floor.",
+   "bounds": {
+    "x0": 30,
+    "x1": 36,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 51.6,
+   "door": {
+    "x": 33.0,
+    "z": 11.4,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 33.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 33.0,
+    "y": 0.0,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 33.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-electronics-lab",
+   "name": "Electronics Lab 1",
+   "floor": 1,
+   "category": "Laboratory",
+   "kind": "lab",
+   "aliases": [
+    "electronics lab",
+    "circuits lab",
+    "ece lab",
+    "lab 1"
+   ],
+   "description": "Bench-based electronics practical lab.",
+   "bounds": {
+    "x0": 0,
+    "x1": 14,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 7.0,
+    "z": 8.6,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 7.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 7.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-telecom-lab",
+   "name": "Telecommunications Lab",
+   "floor": 1,
+   "category": "Laboratory",
+   "kind": "lab",
+   "aliases": [
+    "telecom lab",
+    "rf lab",
+    "communication lab",
+    "antenna lab"
+   ],
+   "description": "Telecommunications Lab on the first floor.",
+   "bounds": {
+    "x0": 24,
+    "x1": 36,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 30.0,
+    "z": 8.6,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-computer-lab",
+   "name": "Computer Lab",
+   "floor": 1,
+   "category": "Laboratory",
+   "kind": "computerlab",
+   "aliases": [
+    "computer lab",
+    "it lab",
+    "programming lab",
+    "cs lab"
+   ],
+   "description": "Computer Lab on the first floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 12,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 6.0,
+    "z": 11.4,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 6.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 6.0,
+    "y": 3.6,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 6.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-faculty-offices",
+   "name": "Faculty Offices",
+   "floor": 1,
+   "category": "Office",
+   "kind": "office",
+   "aliases": [
+    "faculty",
+    "staff room",
+    "professors",
+    "teachers room"
+   ],
+   "description": "Faculty Offices on the first floor.",
+   "bounds": {
+    "x0": 12,
+    "x1": 24,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 18.0,
+    "z": 11.4,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f1-project-lab",
+   "name": "Project Lab",
+   "floor": 1,
+   "category": "Laboratory",
+   "kind": "lab",
+   "aliases": [
+    "project lab",
+    "makerspace",
+    "workshop",
+    "embedded lab"
+   ],
+   "description": "Project Lab on the first floor.",
+   "bounds": {
+    "x0": 24,
+    "x1": 36,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 30.0,
+    "z": 11.4,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-conference",
+   "name": "Conference Room",
+   "floor": 2,
+   "category": "Meeting",
+   "kind": "conference",
+   "aliases": [
+    "meeting room",
+    "board room",
+    "conference"
+   ],
+   "description": "Conference Room on the second floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 14,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 7.0,
+    "z": 8.6,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-dept-office",
+   "name": "Department Office",
+   "floor": 2,
+   "category": "Office",
+   "kind": "office",
+   "aliases": [
+    "department",
+    "hod office",
+    "dept office",
+    "etc department"
+   ],
+   "description": "Department Office on the second floor.",
+   "bounds": {
+    "x0": 24,
+    "x1": 36,
+    "z0": 0.0,
+    "z1": 8.6
+   },
+   "area_m2": 103.2,
+   "door": {
+    "x": 30.0,
+    "z": 8.6,
+    "width": 1.2,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 30.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "entry_anchor": {
+    "x": 30.0,
+    "y": 7.2,
+    "z": 9.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-iot-lab",
+   "name": "IoT Research Lab",
+   "floor": 2,
+   "category": "Laboratory",
+   "kind": "lab",
+   "aliases": [
+    "iot lab",
+    "research lab",
+    "sensors lab"
+   ],
+   "description": "IoT Research Lab on the second floor.",
+   "bounds": {
+    "x0": 0,
+    "x1": 14,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 7.0,
+    "z": 11.4,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-library",
+   "name": "Library & Reading Room",
+   "floor": 2,
+   "category": "Library",
+   "kind": "library",
+   "aliases": [
+    "library",
+    "reading room",
+    "books",
+    "study"
+   ],
+   "description": "Library & Reading Room on the second floor.",
+   "bounds": {
+    "x0": 14,
+    "x1": 28,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 120.4,
+   "door": {
+    "x": 21.0,
+    "z": 11.4,
+    "width": 2.0,
+    "type": "double"
+   },
+   "anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  },
+  {
+   "id": "f2-lounge",
+   "name": "Terrace Lounge",
+   "floor": 2,
+   "category": "Dining",
+   "kind": "lounge",
+   "aliases": [
+    "lounge",
+    "terrace",
+    "break room",
+    "chill area"
+   ],
+   "description": "Terrace Lounge on the second floor.",
+   "bounds": {
+    "x0": 28,
+    "x1": 36,
+    "z0": 11.4,
+    "z1": 20.0
+   },
+   "area_m2": 68.8,
+   "door": {
+    "x": 32.0,
+    "z": 11.4,
+    "width": 1.4,
+    "type": "swing"
+   },
+   "anchor": {
+    "x": 32.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "entry_anchor": {
+    "x": 32.0,
+    "y": 7.2,
+    "z": 10.5
+   },
+   "accessible": true,
+   "nav_anchor": {
+    "x": 32.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "source": "designed_synthetic"
+  }
+ ],
+ "pois": [
+  {
+   "poi_id": "poi-f0-stair-a",
+   "room_id": "f0-stair-a",
+   "name": "Staircase A",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "category": "Stairs",
+   "floor": 0,
+   "anchor": {
+    "x": 16.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 0.0,
+    "z": 8.1
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-lift",
+   "room_id": "f0-lift",
+   "name": "Lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "category": "Lift",
+   "floor": 0,
+   "anchor": {
+    "x": 19.0,
+    "y": 0.0,
+    "z": 7.5
+   },
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-wc-m",
+   "room_id": "f0-wc-m",
+   "name": "Washroom (Men)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 0,
+   "anchor": {
+    "x": 21.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-wc-f",
+   "room_id": "f0-wc-f",
+   "name": "Washroom (Women)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 0,
+   "anchor": {
+    "x": 23.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-stair-a",
+   "room_id": "f1-stair-a",
+   "name": "Staircase A",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "category": "Stairs",
+   "floor": 1,
+   "anchor": {
+    "x": 16.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 3.6,
+    "z": 8.1
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-lift",
+   "room_id": "f1-lift",
+   "name": "Lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "category": "Lift",
+   "floor": 1,
+   "anchor": {
+    "x": 19.0,
+    "y": 3.6,
+    "z": 7.5
+   },
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-wc-m",
+   "room_id": "f1-wc-m",
+   "name": "Washroom (Men)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 1,
+   "anchor": {
+    "x": 21.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-wc-f",
+   "room_id": "f1-wc-f",
+   "name": "Washroom (Women)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 1,
+   "anchor": {
+    "x": 23.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-stair-a",
+   "room_id": "f2-stair-a",
+   "name": "Staircase A",
+   "aliases": [
+    "stairs",
+    "staircase",
+    "steps"
+   ],
+   "category": "Stairs",
+   "floor": 2,
+   "anchor": {
+    "x": 16.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 16.0,
+    "y": 7.2,
+    "z": 8.1
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-lift",
+   "room_id": "f2-lift",
+   "name": "Lift",
+   "aliases": [
+    "elevator",
+    "lift",
+    "accessible lift"
+   ],
+   "category": "Lift",
+   "floor": 2,
+   "anchor": {
+    "x": 19.0,
+    "y": 7.2,
+    "z": 7.5
+   },
+   "nav_anchor": {
+    "x": 19.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-wc-m",
+   "room_id": "f2-wc-m",
+   "name": "Washroom (Men)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "men",
+    "gents",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 2,
+   "anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-wc-f",
+   "room_id": "f2-wc-f",
+   "name": "Washroom (Women)",
+   "aliases": [
+    "restroom",
+    "toilet",
+    "women",
+    "ladies",
+    "wc"
+   ],
+   "category": "Washroom",
+   "floor": 2,
+   "anchor": {
+    "x": 23.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 23.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-seminar-a",
+   "room_id": "f0-seminar-a",
+   "name": "Seminar Hall A",
+   "aliases": [
+    "lecture hall",
+    "auditorium",
+    "seminar",
+    "hall a"
+   ],
+   "category": "Lecture",
+   "floor": 0,
+   "anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "description": "Tiered-seating style seminar hall with projection wall.",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-admin-office",
+   "room_id": "f0-admin-office",
+   "name": "Administrative Office",
+   "aliases": [
+    "admin",
+    "administration",
+    "office"
+   ],
+   "category": "Office",
+   "floor": 0,
+   "anchor": {
+    "x": 30.0,
+    "y": 0.0,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 0.0,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-lobby",
+   "room_id": "f0-lobby",
+   "name": "Entrance Lobby & Reception",
+   "aliases": [
+    "reception",
+    "lobby",
+    "main entrance",
+    "front desk",
+    "entrance"
+   ],
+   "category": "Entrance",
+   "floor": 0,
+   "anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "description": "Main entrance, reception desk and waiting area.",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-commons",
+   "room_id": "f0-commons",
+   "name": "Student Commons & Cafe",
+   "aliases": [
+    "cafe",
+    "cafeteria",
+    "canteen",
+    "food court",
+    "student commons"
+   ],
+   "category": "Dining",
+   "floor": 0,
+   "anchor": {
+    "x": 22.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 22.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "description": "Informal seating, cafe counter and vending.",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f0-help-desk",
+   "room_id": "f0-help-desk",
+   "name": "Security & Help Desk",
+   "aliases": [
+    "help desk",
+    "security",
+    "enquiry",
+    "information"
+   ],
+   "category": "Service",
+   "floor": 0,
+   "anchor": {
+    "x": 33.0,
+    "y": 0.0,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 33.0,
+    "y": 0.0,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-electronics-lab",
+   "room_id": "f1-electronics-lab",
+   "name": "Electronics Lab 1",
+   "aliases": [
+    "electronics lab",
+    "circuits lab",
+    "ece lab",
+    "lab 1"
+   ],
+   "category": "Laboratory",
+   "floor": 1,
+   "anchor": {
+    "x": 7.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "description": "Bench-based electronics practical lab.",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-telecom-lab",
+   "room_id": "f1-telecom-lab",
+   "name": "Telecommunications Lab",
+   "aliases": [
+    "telecom lab",
+    "rf lab",
+    "communication lab",
+    "antenna lab"
+   ],
+   "category": "Laboratory",
+   "floor": 1,
+   "anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-computer-lab",
+   "room_id": "f1-computer-lab",
+   "name": "Computer Lab",
+   "aliases": [
+    "computer lab",
+    "it lab",
+    "programming lab",
+    "cs lab"
+   ],
+   "category": "Laboratory",
+   "floor": 1,
+   "anchor": {
+    "x": 6.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 6.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-faculty-offices",
+   "room_id": "f1-faculty-offices",
+   "name": "Faculty Offices",
+   "aliases": [
+    "faculty",
+    "staff room",
+    "professors",
+    "teachers room"
+   ],
+   "category": "Office",
+   "floor": 1,
+   "anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 18.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f1-project-lab",
+   "room_id": "f1-project-lab",
+   "name": "Project Lab",
+   "aliases": [
+    "project lab",
+    "makerspace",
+    "workshop",
+    "embedded lab"
+   ],
+   "category": "Laboratory",
+   "floor": 1,
+   "anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 3.6,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-conference",
+   "room_id": "f2-conference",
+   "name": "Conference Room",
+   "aliases": [
+    "meeting room",
+    "board room",
+    "conference"
+   ],
+   "category": "Meeting",
+   "floor": 2,
+   "anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-dept-office",
+   "room_id": "f2-dept-office",
+   "name": "Department Office",
+   "aliases": [
+    "department",
+    "hod office",
+    "dept office",
+    "etc department"
+   ],
+   "category": "Office",
+   "floor": 2,
+   "anchor": {
+    "x": 30.0,
+    "y": 7.2,
+    "z": 4.3
+   },
+   "nav_anchor": {
+    "x": 30.0,
+    "y": 7.2,
+    "z": 7.3
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-iot-lab",
+   "room_id": "f2-iot-lab",
+   "name": "IoT Research Lab",
+   "aliases": [
+    "iot lab",
+    "research lab",
+    "sensors lab"
+   ],
+   "category": "Laboratory",
+   "floor": 2,
+   "anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-library",
+   "room_id": "f2-library",
+   "name": "Library & Reading Room",
+   "aliases": [
+    "library",
+    "reading room",
+    "books",
+    "study"
+   ],
+   "category": "Library",
+   "floor": 2,
+   "anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 21.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-f2-lounge",
+   "room_id": "f2-lounge",
+   "name": "Terrace Lounge",
+   "aliases": [
+    "lounge",
+    "terrace",
+    "break room",
+    "chill area"
+   ],
+   "category": "Dining",
+   "floor": 2,
+   "anchor": {
+    "x": 32.0,
+    "y": 7.2,
+    "z": 15.7
+   },
+   "nav_anchor": {
+    "x": 32.0,
+    "y": 7.2,
+    "z": 12.7
+   },
+   "description": "",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-main-entrance",
+   "room_id": "f0-lobby",
+   "name": "Main Entrance",
+   "aliases": [
+    "entry",
+    "front door",
+    "gate",
+    "entrance"
+   ],
+   "category": "Entrance",
+   "floor": 0,
+   "anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 19.2
+   },
+   "nav_anchor": {
+    "x": 7.0,
+    "y": 0.0,
+    "z": 19.2
+   },
+   "description": "Glazed main entrance on the south facade.",
+   "source": "designed_synthetic",
+   "verified": false
+  },
+  {
+   "poi_id": "poi-emergency-exit",
+   "room_id": "f0-corridor",
+   "name": "Emergency Exit (East)",
+   "aliases": [
+    "fire exit",
+    "exit",
+    "emergency exit"
+   ],
+   "category": "Exit",
+   "floor": 0,
+   "anchor": {
+    "x": 35.2,
+    "y": 0.0,
+    "z": 10.0
+   },
+   "nav_anchor": {
+    "x": 35.2,
+    "y": 0.0,
+    "z": 10.0
+   },
+   "description": "East-end corridor exit.",
+   "source": "designed_synthetic",
+   "verified": false
+  }
+ ],
+ "doors": [
+  {
+   "room_id": "f0-stair-a",
+   "floor": 0,
+   "x": 16.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-lift",
+   "floor": 0,
+   "x": 19.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "slide",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-wc-m",
+   "floor": 0,
+   "x": 21.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-wc-f",
+   "floor": 0,
+   "x": 23.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-seminar-a",
+   "floor": 0,
+   "x": 7.0,
+   "z": 8.6,
+   "width": 1.8,
+   "type": "double",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-admin-office",
+   "floor": 0,
+   "x": 30.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f0-lobby",
+   "floor": 0,
+   "x": 7.0,
+   "z": 11.4,
+   "width": 2.6,
+   "type": "arch",
+   "side": "S"
+  },
+  {
+   "room_id": "f0-commons",
+   "floor": 0,
+   "x": 22.0,
+   "z": 11.4,
+   "width": 2.4,
+   "type": "arch",
+   "side": "S"
+  },
+  {
+   "room_id": "f0-help-desk",
+   "floor": 0,
+   "x": 33.0,
+   "z": 11.4,
+   "width": 1.2,
+   "type": "swing",
+   "side": "S"
+  },
+  {
+   "room_id": "f1-stair-a",
+   "floor": 1,
+   "x": 16.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-lift",
+   "floor": 1,
+   "x": 19.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "slide",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-wc-m",
+   "floor": 1,
+   "x": 21.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-wc-f",
+   "floor": 1,
+   "x": 23.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-electronics-lab",
+   "floor": 1,
+   "x": 7.0,
+   "z": 8.6,
+   "width": 1.4,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-telecom-lab",
+   "floor": 1,
+   "x": 30.0,
+   "z": 8.6,
+   "width": 1.4,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f1-computer-lab",
+   "floor": 1,
+   "x": 6.0,
+   "z": 11.4,
+   "width": 1.4,
+   "type": "swing",
+   "side": "S"
+  },
+  {
+   "room_id": "f1-faculty-offices",
+   "floor": 1,
+   "x": 18.0,
+   "z": 11.4,
+   "width": 1.2,
+   "type": "swing",
+   "side": "S"
+  },
+  {
+   "room_id": "f1-project-lab",
+   "floor": 1,
+   "x": 30.0,
+   "z": 11.4,
+   "width": 1.4,
+   "type": "swing",
+   "side": "S"
+  },
+  {
+   "room_id": "f2-stair-a",
+   "floor": 2,
+   "x": 16.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-lift",
+   "floor": 2,
+   "x": 19.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "slide",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-wc-m",
+   "floor": 2,
+   "x": 21.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-wc-f",
+   "floor": 2,
+   "x": 23.0,
+   "z": 8.6,
+   "width": 0.95,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-conference",
+   "floor": 2,
+   "x": 7.0,
+   "z": 8.6,
+   "width": 1.4,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-dept-office",
+   "floor": 2,
+   "x": 30.0,
+   "z": 8.6,
+   "width": 1.2,
+   "type": "swing",
+   "side": "N"
+  },
+  {
+   "room_id": "f2-iot-lab",
+   "floor": 2,
+   "x": 7.0,
+   "z": 11.4,
+   "width": 1.4,
+   "type": "swing",
+   "side": "S"
+  },
+  {
+   "room_id": "f2-library",
+   "floor": 2,
+   "x": 21.0,
+   "z": 11.4,
+   "width": 2.0,
+   "type": "double",
+   "side": "S"
+  },
+  {
+   "room_id": "f2-lounge",
+   "floor": 2,
+   "x": 32.0,
+   "z": 11.4,
+   "width": 1.4,
+   "type": "swing",
+   "side": "S"
+  }
+ ],
+ "stairs": [
+  {
+   "floor_from": 0,
+   "floor_to": 1,
+   "bottom_node": [
+    15.1,
+    0.0,
+    8.1
+   ],
+   "top_node": [
+    16.9,
+    3.6,
+    8.1
+   ],
+   "path_length_m_approx": 9.5,
+   "accessible": false,
+   "polyline": [
+    [
+     15.1,
+     0.0,
+     7.9
+    ],
+    [
+     15.1,
+     1.8,
+     3.9
+    ],
+    [
+     16.0,
+     1.8,
+     4.3
+    ],
+    [
+     16.9,
+     1.8,
+     4.9
+    ],
+    [
+     16.9,
+     3.6,
+     7.6
+    ],
+    [
+     16.9,
+     3.6,
+     8.1
+    ]
+   ],
+   "note": "Two-flight half-landing stair; path_length is an approximation of the walked length."
+  },
+  {
+   "floor_from": 1,
+   "floor_to": 2,
+   "bottom_node": [
+    15.1,
+    3.6,
+    8.1
+   ],
+   "top_node": [
+    16.9,
+    7.2,
+    8.1
+   ],
+   "path_length_m_approx": 9.5,
+   "accessible": false,
+   "polyline": [
+    [
+     15.1,
+     3.6,
+     7.9
+    ],
+    [
+     15.1,
+     5.4,
+     3.9
+    ],
+    [
+     16.0,
+     5.4,
+     4.3
+    ],
+    [
+     16.9,
+     5.4,
+     4.9
+    ],
+    [
+     16.9,
+     7.2,
+     7.6
+    ],
+    [
+     16.9,
+     7.2,
+     8.1
+    ]
+   ],
+   "note": "Two-flight half-landing stair; path_length is an approximation of the walked length."
+  }
+ ],
+ "lifts": [
+  {
+   "floor": 0,
+   "x": 19.0,
+   "z": 7.5,
+   "y": 0.0
+  },
+  {
+   "floor": 1,
+   "x": 19.0,
+   "z": 7.5,
+   "y": 3.6
+  },
+  {
+   "floor": 2,
+   "x": 19.0,
+   "z": 7.5,
+   "y": 7.2
+  }
+ ],
+ "lights": [
+  {
+   "floor": 0,
+   "room": "f0-stair-a",
+   "position": [
+    16.0,
+    2.9,
+    4.3
+   ],
+   "intensity": 2.88,
+   "range": 7.7
+  },
+  {
+   "floor": 0,
+   "room": "f0-wc-m",
+   "position": [
+    21.0,
+    2.9,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 0,
+   "room": "f0-wc-f",
+   "position": [
+    23.0,
+    2.9,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 0,
+   "room": "f0-corridor",
+   "position": [
+    5,
+    2.9,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 0,
+   "room": "f0-corridor",
+   "position": [
+    12,
+    2.9,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 0,
+   "room": "f0-corridor",
+   "position": [
+    18,
+    2.9,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 0,
+   "room": "f0-corridor",
+   "position": [
+    24,
+    2.9,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 0,
+   "room": "f0-corridor",
+   "position": [
+    31,
+    2.9,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 0,
+   "room": "f0-seminar-a",
+   "position": [
+    7.0,
+    2.9,
+    4.3
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 0,
+   "room": "f0-admin-office",
+   "position": [
+    30.0,
+    2.9,
+    4.3
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 0,
+   "room": "f0-lobby",
+   "position": [
+    7.0,
+    2.9,
+    15.7
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 0,
+   "room": "f0-commons",
+   "position": [
+    22.0,
+    2.9,
+    15.7
+   ],
+   "intensity": 6.0,
+   "range": 14.4
+  },
+  {
+   "floor": 0,
+   "room": "f0-help-desk",
+   "position": [
+    33.0,
+    2.9,
+    15.7
+   ],
+   "intensity": 3.56,
+   "range": 7.7
+  },
+  {
+   "floor": 1,
+   "room": "f1-stair-a",
+   "position": [
+    16.0,
+    6.5,
+    4.3
+   ],
+   "intensity": 2.88,
+   "range": 7.7
+  },
+  {
+   "floor": 1,
+   "room": "f1-wc-m",
+   "position": [
+    21.0,
+    6.5,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 1,
+   "room": "f1-wc-f",
+   "position": [
+    23.0,
+    6.5,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 1,
+   "room": "f1-corridor",
+   "position": [
+    5,
+    6.5,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 1,
+   "room": "f1-corridor",
+   "position": [
+    12,
+    6.5,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 1,
+   "room": "f1-corridor",
+   "position": [
+    18,
+    6.5,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 1,
+   "room": "f1-corridor",
+   "position": [
+    24,
+    6.5,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 1,
+   "room": "f1-corridor",
+   "position": [
+    31,
+    6.5,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 1,
+   "room": "f1-electronics-lab",
+   "position": [
+    7.0,
+    6.5,
+    4.3
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 1,
+   "room": "f1-telecom-lab",
+   "position": [
+    30.0,
+    6.5,
+    4.3
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 1,
+   "room": "f1-computer-lab",
+   "position": [
+    6.0,
+    6.5,
+    15.7
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 1,
+   "room": "f1-faculty-offices",
+   "position": [
+    18.0,
+    6.5,
+    15.7
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 1,
+   "room": "f1-project-lab",
+   "position": [
+    30.0,
+    6.5,
+    15.7
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 2,
+   "room": "f2-stair-a",
+   "position": [
+    16.0,
+    10.1,
+    4.3
+   ],
+   "intensity": 2.88,
+   "range": 7.7
+  },
+  {
+   "floor": 2,
+   "room": "f2-wc-m",
+   "position": [
+    21.0,
+    10.1,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 2,
+   "room": "f2-wc-f",
+   "position": [
+    23.0,
+    10.1,
+    4.3
+   ],
+   "intensity": 2.19,
+   "range": 7.7
+  },
+  {
+   "floor": 2,
+   "room": "f2-corridor",
+   "position": [
+    5,
+    10.1,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 2,
+   "room": "f2-corridor",
+   "position": [
+    12,
+    10.1,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 2,
+   "room": "f2-corridor",
+   "position": [
+    18,
+    10.1,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 2,
+   "room": "f2-corridor",
+   "position": [
+    24,
+    10.1,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 2,
+   "room": "f2-corridor",
+   "position": [
+    31,
+    10.1,
+    10.0
+   ],
+   "intensity": 3.0,
+   "range": 8.0
+  },
+  {
+   "floor": 2,
+   "room": "f2-conference",
+   "position": [
+    7.0,
+    10.1,
+    4.3
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 2,
+   "room": "f2-dept-office",
+   "position": [
+    30.0,
+    10.1,
+    4.3
+   ],
+   "intensity": 5.63,
+   "range": 10.8
+  },
+  {
+   "floor": 2,
+   "room": "f2-iot-lab",
+   "position": [
+    7.0,
+    10.1,
+    15.7
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 2,
+   "room": "f2-library",
+   "position": [
+    21.0,
+    10.1,
+    15.7
+   ],
+   "intensity": 6.0,
+   "range": 12.6
+  },
+  {
+   "floor": 2,
+   "room": "f2-lounge",
+   "position": [
+    32.0,
+    10.1,
+    15.7
+   ],
+   "intensity": 4.25,
+   "range": 7.7
+  }
+ ]
+}
