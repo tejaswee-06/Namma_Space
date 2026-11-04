@@ -1,331 +1,305 @@
 
 <div align="center">
 
-# 🏛️ NAMMA TWIN
+# 🏡 NAMMA LUXE TWIN — HOUSE 01
 
-### A Browser-First Indoor Digital Twin for Spatial Inspection, Semantic Discovery, and Multi-Floor Navigation
+### An Interactive, Semantic, Multi-Floor Digital Twin of a Contemporary Indian Townhouse
 
-**TECHFEST IIT BOMBAY 2026–27 · NAMMA SPACE**
-
+**TECHFEST IIT BOMBAY 2026–27 · NAMMA SPACE**  
 **TEAM TWOPOINTERS**
 
-[🌐 Live Application](https://namma-project-sable.vercel.app/) · [💻 GitHub Repository](https://github.com/tejaswee-06/Namma_Space)
+[🌐 Live House Twin](https://namma-project-sable.vercel.app/) · [💻 Source Repository](https://github.com/tejaswee-06/Namma_Space)
 
-![Prototype](https://img.shields.io/badge/Stage-Round%201%20Prototype-315A79?style=for-the-badge)
-![WebGL](https://img.shields.io/badge/Rendering-Custom%20WebGL2-6B4F9B?style=for-the-badge)
-![GLB](https://img.shields.io/badge/3D%20Format-glTF%20%2F%20GLB-3A7D69?style=for-the-badge)
-![Navigation](https://img.shields.io/badge/Navigation-13%2F13%20Tests%20Passed-2E7D55?style=for-the-badge)
+![React](https://img.shields.io/badge/React-18.3-61DAFB?style=for-the-badge&logo=react&logoColor=111111)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.6-3178C6?style=for-the-badge&logo=typescript&logoColor=white)
+![Three.js](https://img.shields.io/badge/Three.js-0.169-000000?style=for-the-badge&logo=threedotjs&logoColor=white)
+![Vite](https://img.shields.io/badge/Vite-5.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)
+![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?style=for-the-badge&logo=fastapi&logoColor=white)
+![Blender](https://img.shields.io/badge/Blender-4D76A8?style=for-the-badge&logo=blender&logoColor=white)
+![Navigation](https://img.shields.io/badge/Navigation-A*%20%7C%20Multi--Floor-2E7D55?style=for-the-badge)
 ![Deployment](https://img.shields.io/badge/Deployment-Vercel-black?style=for-the-badge&logo=vercel)
 
-*Make an indoor environment explorable—not merely viewable.*
+*Explore the house as geometry. Understand it as structured space. Move through it with constraints.*
 
 </div>
 
 ---
 
-## 📌 Table of Contents
+# 📌 Table of Contents
 
-- [The Product](#-the-product)
-- [Live Demonstration](#-live-demonstration)
+- [Competition](#-competition)
 - [The Problem](#-the-problem)
-- [Our Approach](#-our-approach)
-- [Current Prototype Capabilities](#-current-prototype-capabilities)
-- [Demonstration Environment](#-demonstration-environment)
-- [Core User Experience](#-core-user-experience)
+- [Our Solution](#-our-solution)
+- [Core Engineering Principle](#-core-engineering-principle)
+- [Live Product](#-live-product)
+- [House 01 at a Glance](#-house-01-at-a-glance)
+- [The Interactive Experience](#-the-interactive-experience)
+- [Spatial Search and Discovery](#-spatial-search-and-discovery)
+- [Multi-Floor Navigation](#-multi-floor-navigation)
+- [Smart-Home Interaction Layer](#-smart-home-interaction-layer)
+- [Lighting and Environment](#-lighting-and-environment)
+- [Cinematic and Dollhouse Modes](#-cinematic-and-dollhouse-modes)
 - [System Architecture](#-system-architecture)
-- [Spatial Representation Model](#-spatial-representation-model)
-- [Navigation and Pathfinding](#-navigation-and-pathfinding)
-- [Synthetic Scan Experiment](#-synthetic-scan-experiment)
-- [Real-World Reconstruction: Target Pipeline](#-real-world-reconstruction-target-pipeline)
+- [Spatial Data Model](#-spatial-data-model)
+- [Navigation Architecture](#-navigation-architecture)
+- [Backend and API](#-backend-and-api)
+- [Room Telemetry](#-room-telemetry)
+- [Blender and Architectural Deliverables](#-blender-and-architectural-deliverables)
 - [Technology Stack](#-technology-stack)
 - [Getting Started](#-getting-started)
-- [Reproducibility and Testing](#-reproducibility-and-testing)
+- [Testing and Validation](#-testing-and-validation)
 - [Repository Structure](#-repository-structure)
 - [Deployment](#-deployment)
-- [Limitations and Engineering Boundaries](#-limitations-and-engineering-boundaries)
-- [Development Roadmap](#-development-roadmap)
+- [End-to-End Demo Workflow](#-end-to-end-demo-workflow)
+- [What Makes NAMMA LUXE TWIN Different](#-what-makes-namma-luxe-twin-different)
+- [Provenance, Scope, and Limitations](#-provenance-scope-and-limitations)
+- [Roadmap](#-roadmap)
 - [Team](#-team)
 
 ---
 
-# 🏛️ The Product
+# 🏆 Competition
 
-Indoor environments are difficult to understand remotely when information is distributed across photographs, static floor plans, room labels, and verbal instructions.
+## TECHFEST IIT BOMBAY — NAMMA SPACE 2026–27
 
-A photograph communicates appearance.  
-A floor plan communicates layout.  
-A room label communicates identity.
+**Project:** NAMMA LUXE TWIN — HOUSE 01  
+**Team:** TWOPOINTERS  
+**Track:** Indoor Spatial Digital Twin  
+**Institution:** Thadomal Shahani Engineering College, Mumbai
 
-None of these, individually, provides an interactive spatial representation that allows a remote visitor to inspect an environment, identify locations, understand room connectivity, and navigate between destinations.
+### Team Members
 
-**NAMMA TWIN** explores a browser-based indoor digital twin architecture that brings these capabilities together through three independently modelled layers:
-
-1. **Visual Geometry** — the 3D representation of the physical environment.
-2. **Semantic Structure** — rooms, points of interest, doors, floors, stairs, and lifts.
-3. **Navigation Geometry** — walkable regions, obstacle constraints, and inter-floor connectivity.
-
-The central engineering principle is that these representations should remain logically independent while maintaining a consistent spatial coordinate system.
-
-This separation enables the viewer to render a scene, interpret its spatial entities, and calculate routes without treating the visible mesh as the navigation model.
-
-### Product Vision
-
-```text
-                INDOOR ENVIRONMENT
-                        |
-                        v
-               SPATIAL REPRESENTATION
-                        |
-          +-------------+-------------+
-          |             |             |
-          v             v             v
-     VISUAL MODEL   SEMANTIC MODEL   NAVIGATION MODEL
-          |             |             |
-          +-------------+-------------+
-                        |
-                        v
-               BROWSER-BASED VIEWER
-                        |
-          +-------------+-------------+
-          |             |             |
-          v             v             v
-       INSPECT        SEARCH        NAVIGATE
-```
-
-**Current implementation status:** The deployed Round 1 prototype uses a procedurally generated synthetic three-floor institutional environment named `NAMMA Demo Block A`. It is a controlled demonstration environment, not a reconstruction of a real home or building.
-
----
-
-# 🌐 Live Demonstration
-
-<div align="center">
-
-### Explore NAMMA TWIN
-
-[![Open Live Application](https://img.shields.io/badge/OPEN%20LIVE%20APPLICATION-NAMMA%20TWIN-167D65?style=for-the-badge&logo=vercel&logoColor=white)](https://namma-twin.vercel.app/)
-
-[Direct Viewer](https://namma-twin.vercel.app/namma-twin.html)
-
-</div>
-
-The deployed application provides a standalone browser-based viewer.
-
-It does not require users to install a desktop 3D application or run a local API service simply to inspect the current scene.
+- **Tejaswee Rajput** — Team Lead
+- **Sohana Pilli** — Team Member
+- **Rahul Sharma** — Team Member
 
 ---
 
 # 🚨 The Problem
 
-Traditional indoor spatial references have several limitations.
+Indoor environments are difficult to understand remotely when information is fragmented across photographs, static floor plans, room labels, and verbal directions.
 
-| Traditional Representation | Limitation |
-|---|---|
-| Photographs | Limited spatial context and no navigable connectivity |
-| Static floor plans | Do not provide immersive visual inspection |
-| Room labels | Identify destinations without explaining spatial relationships |
-| Manual directions | Difficult to communicate consistently across complex buildings |
-| Conventional 3D models | Visual geometry alone does not guarantee valid navigation |
+A photograph communicates appearance, but not traversable connectivity. A floor plan communicates layout, but not an immersive view of the space. A room label identifies a destination, but does not explain how a person can reach it.
 
-A useful indoor digital twin must address more than visual appearance.
+A useful indoor digital twin must bring these representations together while preserving their distinct responsibilities.
 
-It must establish consistency between:
+The engineering challenge has several coupled dimensions:
 
-- Geometry and physical spatial boundaries.
-- Room identity and point-of-interest locations.
-- Walkable surfaces and physical obstacles.
-- Inter-floor connectivity and route transitions.
-- Spatial coordinates and measurements.
+- **Visual representation:** constructing a coherent 3D scene that can be inspected from multiple viewpoints.
+- **Spatial semantics:** associating rooms, furniture, fixtures, doors, and points of interest with stable identities and coordinates.
+- **Walkability:** distinguishing navigable floor regions from walls, glazing, furniture, rails, gates, and other obstacles.
+- **Multi-floor connectivity:** representing vertical circulation explicitly rather than treating floors as disconnected images.
+- **Interaction:** supporting search, inspection, guided routes, and direct first-person movement in a browser.
+- **Stateful scene controls:** allowing selected architectural and smart-home elements to respond to user interaction.
 
-For capture-derived environments, additional challenges include incomplete image coverage, camera registration failures, scale ambiguity, orientation drift, occlusion, reflective surfaces, and inconsistent lighting.
+For a capture-derived digital twin, further challenges arise from incomplete image coverage, blur, occlusion, reflective surfaces, camera-registration errors, metric-scale ambiguity, and gravity-alignment drift.
 
-**The objective is therefore not simply to render a building in 3D. It is to create a spatially structured representation that supports meaningful inspection and navigation.**
+**The problem is therefore not merely rendering a house in 3D. It is maintaining consistency between visual geometry, semantic information, and navigable space.**
 
 ---
 
-# 💡 Our Approach
+# 💡 Our Solution
 
-NAMMA TWIN follows a layered architecture.
+**NAMMA LUXE TWIN — HOUSE 01** is a browser-based, interactive digital-twin prototype built around a contemporary G+1 Indian townhouse.
 
-### Layer 1 — Scene Generation
+The product combines a detailed 3D house model with structured room and object metadata, floor-aware navigation, natural-language-style spatial search, interactive scene controls, and a dedicated API layer.
 
-A Python procedural scene-generation pipeline creates the controlled synthetic environment.
+The application is organised around five product capabilities:
 
-It produces separate representations for:
+- 🏡 **Immersive house inspection** — orbit, first-person, cinematic, and dollhouse views.
+- 🔎 **Semantic spatial discovery** — find rooms and objects using names, categories, and synonym-aware queries.
+- 🧭 **Obstacle-aware guidance** — calculate routes over per-floor walkability grids and explicit stair connectivity.
+- 💡 **Interactive home controls** — operate scene lights, fans, curtains, doors, and sliders in the rendered model.
+- 📐 **Architectural information** — inspect floor plans, room dimensions, object positions, drawings, and schedules.
 
-- Visual geometry.
-- Collision geometry.
-- Semantic room and POI records.
-- Per-floor navigation grids.
-- Inter-floor portal connectivity.
+The experience is divided into two cooperating parts:
 
-### Layer 2 — Scene Packaging
+```text
+                         NAMMA LUXE TWIN
+                                │
+                ┌───────────────┴───────────────┐
+                │                               │
+                ▼                               ▼
+        INTERACTIVE HOUSE                 SPATIAL SERVICES
+          EXPERIENCE                    AND DATA LAYER
+                │                               │
+      ┌─────────┼─────────┐           ┌─────────┼─────────┐
+      │         │         │           │         │         │
+      ▼         ▼         ▼           ▼         ▼         ▼
+    Inspect   Search   Navigate     Rooms     Routes   Telemetry
+      │         │         │           │         │         │
+      └─────────┴─────────┘           └─────────┴─────────┘
+                │                               │
+                └───────────────┬───────────────┘
+                                ▼
+                       STRUCTURED HOUSE TWIN
+```
 
-A Python packaging utility combines the generated scene assets and browser viewer modules into a standalone HTML application.
-
-### Layer 3 — Browser Rendering
-
-The viewer uses a custom WebGL2 rendering implementation to display the environment and support interactive camera controls.
-
-### Layer 4 — Semantic Discovery
-
-Bundled semantic records support room and POI identification, selection, and destination lookup.
-
-### Layer 5 — Navigation
-
-A* search operates over walkability grids with explicit portal transitions and collision-aware route validation.
-
-### Layer 6 — Static Deployment
-
-The packaged viewer is published through Vercel and served directly to browsers.
-
----
-
-# 🎯 Current Prototype Capabilities
-
-| Capability | Implementation |
-|---|---|
-| 3D inspection | Custom WebGL2 viewer |
-| Exterior inspection | Orbit camera and zoom controls |
-| Multi-floor viewing | Ground, first, and second floor visibility |
-| Cutaway inspection | Internal spatial inspection modes |
-| Exploded view | Spatial layer inspection |
-| Floor-plan view | Floor-specific layout inspection |
-| Semantic search | Room and POI records |
-| Destination selection | Semantic location selection |
-| Pathfinding | 8-connected A* |
-| Inter-floor navigation | Explicit stair and lift portals |
-| Step-free routing | Lift-constrained routing |
-| Collision validation | Route checks against authored obstacles |
-| Walk mode | First-person camera interaction |
-| Static packaging | Standalone HTML artifact |
-| Deployment | Vercel static hosting |
-
-## Engineering Differentiators
-
-### 1. Geometry Is Not Navigation
-
-A rendered mesh is not automatically a valid walking surface.
-
-NAMMA TWIN maintains separate collision and navigation representations so that visual appearance does not determine route validity.
-
-### 2. Semantics Are Explicit Data
-
-Rooms, POIs, doors, stairs, and lifts are represented as structured records.
-
-This allows spatial entities to be searched and selected independently of their rendered appearance.
-
-### 3. Navigation Fails Closed
-
-When a destination is unmapped, blocked, or disconnected, the route planner can return a no-path result rather than inventing a route.
-
-### 4. Modular Scene Replacement
-
-The viewer consumes a packaged scene representation.
-
-This allows a future scene package to replace the current synthetic environment without requiring the browser interaction layer to be rewritten.
-
-### 5. Provenance-Aware Evaluation
-
-Synthetic scene-generation statistics and simulated scan results are distinguished from real-world reconstruction measurements.
+**Provenance:** HOUSE 01 is a procedurally designed synthetic environment generated from Python geometry and Blender workflows. It is not a photogrammetric reconstruction of an occupied home. The interface displays this provenance explicitly.
 
 ---
 
-# 🏢 Demonstration Environment
+# 🎯 Core Engineering Principle
 
-The current prototype uses **NAMMA Demo Block A**, a procedurally generated three-floor institutional environment.
+NAMMA LUXE TWIN does not treat the rendered mesh as the entire digital twin.
 
-The environment contains:
+Instead, the house is represented through independently generated but spatially aligned data layers:
 
-- Entrance lobby and reception.
-- Seminar and conference spaces.
-- Administrative offices.
-- Student commons and café.
-- Teaching and research laboratories.
-- Faculty and department offices.
-- Library and reading areas.
-- Washrooms.
-- Staircases and lift cores.
+```text
+VISUAL GEOMETRY
+      │
+      ├── GLB scene and materials
+      │
+      ▼
+SEMANTIC STRUCTURE
+      │
+      ├── Floors, rooms, objects, doors, lights
+      │
+      ▼
+NAVIGATION STRUCTURE
+      │
+      ├── Walkability grids, colliders, stair portal
+      │
+      ▼
+INTERACTIVE RUNTIME
+      │
+      ├── Rendering, search, routes, scene controls
+      │
+      ▼
+BROWSER DIGITAL TWIN
+```
 
-## Scene Statistics
+This separation supports three important properties:
 
-The following values are taken from the committed synthetic scene build statistics.
+1. **Independent validation:** navigation can be tested without relying on visual plausibility.
+2. **Stable interaction contracts:** the viewer consumes structured scene data rather than hard-coding every room and object.
+3. **Replaceable scene assets:** the rendered house can be regenerated or replaced while retaining the broader interaction architecture, provided the scene schema and coordinate conventions are preserved.
+
+---
+
+# 🌐 Live Product
+
+<div align="center">
+
+### Explore NAMMA LUXE TWIN — HOUSE 01
+
+[![Open Live Application](https://img.shields.io/badge/OPEN%20LIVE%20HOUSE%20TWIN-NAMMA%20LUXE-9A7448?style=for-the-badge&logo=vercel&logoColor=white)](https://namma-project-sable.vercel.app/)
+
+**Live URL:** https://namma-project-sable.vercel.app/
+
+</div>
+
+The deployed frontend provides the interactive 3D house experience. The bundled scene assets and spatial JSON files are loaded by the browser. The FastAPI service is a separate optional component; API-dependent telemetry is available only when that service is configured and reachable.
+
+---
+
+# 🏡 House 01 at a Glance
+
+HOUSE 01 is a two-storey contemporary Indian townhouse designed around a 10.8 m × 17.2 m building envelope.
+
+### Architectural Programme
+
+**Ground Floor**
+
+- Entrance foyer
+- Guest bedroom
+- Guest bathroom / powder room
+- Storage
+- Formal living room
+- Dining room
+- Kitchen
+- Pantry
+- Utility / laundry
+- Rear garden / courtyard
+
+**First Floor**
+
+- Staircase landing and corridor
+- Master bedroom
+- Walk-in wardrobe
+- Master bathroom
+- Family lounge
+- Bedroom 2
+- Study / library
+- Additional bathroom
+- Bedroom 2 dressing area
+- Front balcony
+
+### Generated Scene Statistics
 
 | Parameter | Value |
 |---|---:|
-| Floors | 3 |
-| Room records | 30 |
-| POI records | 29 |
-| Collider volumes | 668 |
-| Visual meshes | 155 |
-| Visual triangles | 51,708 |
-| Visual materials | 41 |
-| Textures | 7 |
-| Collision meshes | 588 |
-| Collision triangles | 7,056 |
+| Building floors | 2 (Ground + First) |
+| Floor-to-floor height | 3.4 m |
+| Building envelope | 10.8 m × 17.2 m |
+| Room records | 21 (including a facade-screen record) |
+| Main spatial rooms / areas | 20 |
+| Semantic objects | 213 |
+| Door / gate records | 20 |
+| Light anchors | 85 |
+| Collision volumes | 329 |
+| Stair connections | 1 portal connection |
+| Scene triangle count | 350,728 |
+| Optimised web GLB | approximately 6.7 MB |
 
-The authored environment uses a 36 m × 20 m footprint, a 3.6 m floor-to-floor interval, and a Y-up local coordinate convention.
+These are generated scene metadata and asset statistics. They are not survey measurements of a real property.
 
-These values describe the synthetic scene specification. They are not measurements of a surveyed physical building.
+## Exterior
+
+<div align="center">
+
+<img src="docs/renders/exterior_front.png" alt="NAMMA LUXE TWIN House 01 exterior front render" width="88%" />
+
+*Front elevation and entrance approach — generated Blender render.*
+
+</div>
+
+## Dollhouse View
+
+<div align="center">
+
+<img src="docs/renders/dollhouse.png" alt="NAMMA LUXE TWIN House 01 dollhouse render" width="88%" />
+
+*Separated floor and roof composition for whole-house inspection.*
+
+</div>
+
+## Interior Views
+
+<div align="center">
+
+<img src="docs/renders/gf-living.png" alt="Ground floor formal living room render" width="48%" />
+<img src="docs/renders/gf-kitchen.png" alt="Ground floor kitchen render" width="48%" />
+
+<img src="docs/renders/ff-master-bedroom.png" alt="First floor master bedroom render" width="48%" />
+<img src="docs/renders/ff-balcony.png" alt="First floor front balcony render" width="48%" />
+
+</div>
 
 ---
 
-# 🧭 Core User Experience
+# 🧭 The Interactive Experience
 
-## 1. Exterior Inspection
+NAMMA LUXE TWIN provides four primary viewing modes.
 
-Users can orbit around the generated environment to understand its overall structure.
+## 1. Orbit Mode
 
-Available interactions include:
+Orbit mode is the default inspection experience.
 
-- Camera rotation.
-- Zoom.
-- Pan.
-- Object selection.
-- Floor visibility controls.
+Users can:
 
-## 2. Multi-Floor Exploration
+- Rotate the camera around the house.
+- Zoom and pan to inspect architectural details.
+- Select rooms and catalogued objects.
+- Focus the camera on a selected spatial entity.
+- Change floor visibility and roof visibility.
+- Open the floor-plan interface.
 
-The building contains three independently selectable floors.
+## 2. Walk Mode
 
-Users can isolate a floor to inspect its internal layout without navigating through the entire structure.
+Walk mode places the camera at a first-person eye position inside the house.
 
-## 3. Cutaway and Exploded Views
-
-Spatial inspection modes expose the internal arrangement of the environment.
-
-These views help users understand the relationship between floors, rooms, corridors, and vertical circulation.
-
-## 4. Semantic Room and POI Discovery
-
-The viewer uses bundled semantic records to identify rooms and points of interest.
-
-Example locations include:
-
-- Main Entrance.
-- Entrance Lobby & Reception.
-- Student Commons & Cafe.
-- Electronics Lab 1.
-- Telecommunications Lab.
-- Library & Reading Room.
-- Conference Room.
-- Lift and Staircase A.
-
-## 5. Route Preview
-
-Users can select a destination and request a route through the authored navigation model.
-
-The route planner considers:
-
-- Walkable cells.
-- Obstacle masks.
-- Floor connectivity.
-- Stair transitions.
-- Lift transitions.
-- Destination reachability.
-
-## 6. First-Person Walk Mode
-
-Walk mode provides a more direct way to inspect the generated environment.
+The runtime uses a custom collision world built from axis-aligned bounding-box (AABB) colliders.
 
 | Input | Action |
 |---|---|
@@ -333,169 +307,135 @@ Walk mode provides a more direct way to inspect the generated environment.
 | `A` | Move left |
 | `S` | Move backward |
 | `D` | Move right |
-| Arrow keys | Directional movement |
-| Pointer movement | Look around |
-| Floor click | Move toward a selected walkable location |
-| `E` | Use an available stair or lift transition |
+| Mouse | Look around after pointer capture |
+| `Shift` | Run |
+| `E` / click | Interact with a nearby supported door or object |
+| `Esc` | Release pointer capture / leave guided interaction |
+| `M` | Open the plan interface |
 
-### Recommended Demonstration Sequence
+When pointer lock is unavailable, drag-look interaction is used as a fallback.
 
-```text
-OPEN EXTERIOR VIEW
-        |
-        v
-SELECT A FLOOR
-        |
-        v
-INSPECT CUTAWAY
-        |
-        v
-SEARCH FOR A ROOM
-        |
-        v
-SELECT A POI
-        |
-        v
-PREVIEW THE ROUTE
-        |
-        v
-CHECK FLOOR TRANSITIONS
-        |
-        v
-ENTER WALK MODE
-```
+Movement is checked against the authored wall, furniture, glass, rail, gate, and door collider set. The movement resolver attempts axis sliding when a diagonal move is blocked.
+
+## 3. Cinematic Mode
+
+Cinematic mode plays a sequence of predefined camera shots.
+
+Two tour groups are provided:
+
+- Exterior tour
+- Interior tour
+
+The user can play, pause, move between shots, and inspect the scene through authored camera positions and look targets.
+
+## 4. Dollhouse Mode
+
+Dollhouse mode exposes the building's internal organisation by animating floor and room separation.
+
+It provides:
+
+- Floor separation control.
+- Room explosion control.
+- Roof elevation.
+- Reassembly into the normal house configuration.
+
+This mode is intended for architectural inspection and spatial explanation rather than navigation.
 
 ---
 
-# 🏗️ System Architecture
+# 🔎 Spatial Search and Discovery
 
-The current architecture separates the implemented viewer from the experimental scan simulator and the planned real-capture pipeline.
+The search system allows users to locate rooms and objects without manually expanding the entire house hierarchy.
 
-## Implemented Architecture
+Search is implemented through deterministic token parsing, synonym expansion, and relevance scoring. It is not an LLM-based conversational service.
 
-```mermaid
-flowchart TB
+## Supported Query Patterns
 
-    A["Procedural Python Scene Generator"]
-
-    A --> B["Scene Package"]
-
-    B --> C["Visual GLB"]
-    B --> D["Semantic JSON"]
-    B --> E["Collision Geometry"]
-    B --> F["Navigation Grid"]
-
-    C --> G["Python HTML Packager"]
-    D --> G
-    E --> G
-    F --> G
-
-    H["Viewer Template and JavaScript Modules"] --> G
-
-    G --> I["Standalone HTML Application"]
-
-    I --> J["Static Vercel Deployment"]
-
-    J --> K["Browser WebGL2 Viewer"]
-
-    K --> L["3D Inspection"]
-    K --> M["Semantic Discovery"]
-    K --> N["Navigation and Route Preview"]
-    K --> O["First-Person Walk Mode"]
-```
-
-## Architecture Components
-
-| Component | Responsibility |
+| Query | Intent |
 |---|---|
-| Procedural Scene Builder | Generates the synthetic environment |
-| Visual GLB | Stores renderable geometry |
-| Semantic JSON | Stores rooms, floors, POIs and connectivity records |
-| Collision Geometry | Represents obstacles and collision constraints |
-| Navigation Grid | Stores walkability and portal information |
-| HTML Packager | Creates the standalone viewer |
-| Browser Renderer | Displays the scene using WebGL2 |
-| Navigation Engine | Calculates and validates routes |
-| Vercel | Hosts the static application |
+| `Find the chandelier` | Find a matching object |
+| `Where is the fireplace` | Locate a named object |
+| `Take me to the master bedroom` | Resolve a destination and request a route |
+| `Find the nearest bathroom` | Rank matching destinations by route distance |
+| `Find all lighting devices` | Return matching objects as a group |
+| `Take me to the study` | Route to a room destination |
 
-## Representation Layers
+## Search Pipeline
 
 ```text
-                   SCENE PACKAGE
-                        |
-          +-------------+-------------+
-          |             |             |
-          v             v             v
-      VISUAL        SEMANTIC       NAVIGATION
-      GEOMETRY       STRUCTURE      GEOMETRY
-          |             |             |
-          v             v             v
-       visual.glb   semantic.json  navgrid.json
-          |             |             |
-          +-------------+-------------+
-                        |
-                        v
-                  BROWSER VIEWER
-                        |
-          +-------------+-------------+
-          |             |             |
-          v             v             v
-       RENDER         SEARCH        ROUTING
+USER QUERY
+    │
+    ▼
+TOKEN NORMALISATION
+    │
+    ▼
+INTENT CLASSIFICATION
+    │
+    ├── FIND
+    ├── GOTO
+    ├── NEAREST
+    └── ALL
+    │
+    ▼
+SYNONYM EXPANSION
+    │
+    ▼
+ROOM + OBJECT MATCHING
+    │
+    ▼
+RELEVANCE SCORING
+    │
+    ▼
+RESULTS
+    │
+    ├── Focus and highlight
+    ├── Select entity
+    └── Navigate to destination
 ```
 
----
+## Semantic Search Features
 
-# 🧱 Spatial Representation Model
+- Room names and room categories.
+- Object names and object categories.
+- Keyword matching.
+- Synonym expansion for common terms.
+- Nearest-result selection using calculated route distance.
+- Multi-object result highlighting.
+- Camera focus on selected rooms and objects.
 
-The project maintains separate spatial representations to avoid coupling navigation behaviour to visual rendering.
+Example synonym families include:
 
-## Visual Layer
+- `toilet` ↔ bathroom / washroom / WC / powder room
+- `couch` ↔ sofa
+- `fridge` ↔ refrigerator
+- `lights` ↔ lighting / lamps / chandelier / pendant
+- `stairs` ↔ staircase
+- `drapes` ↔ curtains
 
-The visual layer contains the generated building geometry, material definitions, and textures.
-
-Its purpose is to provide the rendered representation used for remote inspection.
-
-## Semantic Layer
-
-The semantic layer contains structured information about:
-
-- Floors.
-- Rooms.
-- POIs.
-- Doors.
-- Staircases.
-- Lifts.
-- Room labels.
-- Spatial associations.
-
-## Collision Layer
-
-The collision layer contains obstacle geometry and collider information used to validate movement and route clearance.
-
-## Navigation Layer
-
-The navigation layer contains floor-specific walkability grids and the explicit portal graph connecting floors.
-
-This separation allows each representation to be inspected and tested independently.
+Search is deterministic and data-grounded: the system only returns entities represented in the current semantic dataset.
 
 ---
 
-# 🗺️ Navigation and Pathfinding
+# 🗺️ Multi-Floor Navigation
 
-The navigation model is separate from the visible scene mesh.
+A rendered house is not automatically a navigable house.
 
-The current Python navigation implementation uses:
+NAMMA LUXE TWIN maintains a separate navigation grid and collision model so routes are generated from walkability constraints rather than from visual mesh appearance.
 
-1. Per-floor walkability grids.
-2. Obstacle masks derived from collider bounds.
-3. Eight-connected A* search within a floor.
-4. Explicit stair and lift portal transitions.
-5. Line-of-sight route smoothing.
-6. Final route revalidation against the authored navigation and collision representation.
+## Navigation Model
 
-## A* Search
+- Per-floor walkability grids.
+- Grid cell resolution: 0.1 m.
+- Agent radius: 0.25 m.
+- Eight-connected A* search.
+- Diagonal movement only when both adjacent orthogonal cells are walkable.
+- Explicit stair portal between ground and first floor.
+- Line-of-sight route smoothing.
+- Independent segment validation against blocking AABBs.
 
-A* estimates the cost of reaching the destination using:
+## Route Computation
+
+A* evaluates candidate cells using:
 
 \[
 f(n)=g(n)+h(n)
@@ -503,186 +443,519 @@ f(n)=g(n)+h(n)
 
 Where:
 
-- \(g(n)\) is the accumulated path cost.
-- \(h(n)\) is the estimated remaining cost.
-- \(f(n)\) is the total estimated route cost.
+- `g(n)` is the accumulated route cost from the start.
+- `h(n)` is the estimated remaining cost to the destination.
+- `f(n)` is the total estimated cost of the candidate node.
 
-The search operates on walkable cells rather than arbitrary rendered triangles.
+The implementation uses cardinal and diagonal edge weights and incorporates the explicit portal connection for inter-floor movement.
 
-## Inter-Floor Navigation
+## Navigation Pipeline
 
-The portal graph models transitions between floors through explicit connections.
+```text
+START LOCATION + DESTINATION
+              │
+              ▼
+      RESOLVE ROOM / OBJECT
+              │
+              ▼
+       MAP TO GRID CELLS
+              │
+              ▼
+       CHECK WALKABILITY
+              │
+              ▼
+       8-CONNECTED A* SEARCH
+              │
+              ├── Same-floor neighbours
+              │
+              └── Stair portal transition
+              │
+              ▼
+       RECONSTRUCT PATH
+              │
+              ▼
+       LINE-OF-SIGHT SMOOTHING
+              │
+              ▼
+       COLLIDER VALIDATION
+              │
+              ▼
+       ROUTE RESULT / NO-PATH
+```
 
-Stairs and lifts are represented as different transition types, enabling constrained routing.
+## Route Interaction
 
-## Route Validation
+When a route is found, the interface displays:
 
-Candidate routes are checked against the authored walkability and collision representation.
+- Start and destination labels.
+- Estimated route distance.
+- Approximate walk duration derived from a fixed nominal speed.
+- Floor-transition information.
+- Ordered room transitions.
+- A route polyline on the mini-map / plan view.
+- A **Walk it** action to enter guided route mode.
 
-The planner is designed to reject invalid or disconnected paths rather than silently creating paths through obstacles.
+The user can also choose start and end locations directly from the floor-plan interface.
 
-## Test Results
+## Collision Behaviour
 
-The current navigation test suite contains 13 tests and passed **13/13** on the authored synthetic scene.
+The authored collision model treats the following categories as blocking geometry:
 
-Test coverage includes:
+- Walls
+- Furniture
+- Glass
+- Rails
+- Gates
+- Closed doors
 
-- Same-floor routing.
-- POI reachability.
-- Multi-floor navigation.
-- Lift-constrained routing.
-- Blocked corridors.
-- Unmapped destinations.
-- Sealed doors.
-- Alternate path generation.
-- Obstacle clearance.
-- Stair and lift constraints.
+Door state can change the corresponding runtime collision state. The movement controller uses a custom AABB-based collision and sliding resolver; it does not use Rapier or a physics-engine character controller.
 
-These results demonstrate software behaviour on the synthetic environment. They do not certify navigation safety in a real building.
+The route validator provides an additional software check against raw blocker bounds. This is validation on the designed scene, not a physical safety certification.
 
 ---
 
-# 🧪 Synthetic Scan Experiment
+# 💡 Smart-Home Interaction Layer
 
-A separate experimental module simulates camera trajectories, visibility, noisy observations, feature tracks, and point-cloud generation using the procedurally authored scene.
+The Smart Home panel exposes controls that change supported elements in the rendered house.
 
-The experiment is intended to investigate viewpoint coverage and registration-related behaviour in a controlled environment.
+These controls are **visual scene simulations**. They are not connected to physical appliances, home-automation hubs, or installed IoT devices.
 
-**It is not a real smartphone capture and is not a COLMAP reconstruction.**
+## Lighting Groups
 
-## Recorded Experiment Values
+The light system contains 85 authored light anchors divided into eight groups:
 
-| Parameter | Recorded Result |
-|---|---:|
-| Virtual frames generated | 604 |
-| Frames marked registered | 445 |
-| Registration proportion | 73.7% |
-| Candidate surface samples | 3,000,000 |
-| Feature points retained | 1,315,421 |
-| Triangulated point estimates | 453,196 |
-| Dense point set after thinning | 370,496 |
-| Mean room-floor coverage | 37.9% |
-| Simulation runtime | 237.1 seconds |
+- Chandeliers
+- Pendants
+- Wall sconces
+- Table and floor lamps
+- Cove lighting
+- Downlights
+- Task lighting
+- Exterior and garden lighting
 
-The 37.9% mean room-floor coverage is treated as a limitation signal.
+Users can:
 
-The simulator uses a known synthetic reference environment. Its residuals and point-cloud statistics cannot establish the accuracy of a real-image reconstruction system.
+- Toggle individual lighting groups.
+- Turn all supported lighting groups on or off.
+- Adjust overall brightness.
+- Adjust ambient intensity.
+- Change the time-of-day environment.
 
-The report explicitly records:
+The runtime uses a bounded pool of actual point lights and assigns the nearest enabled light anchors to that pool. The number of active point lights depends on the selected quality mode.
+
+## Fans
+
+Four fan objects are catalogued in the current semantic dataset.
+
+Each fan supports four simulated states:
+
+- Off
+- Speed 1
+- Speed 2
+- Speed 3
+
+The selected state changes the rendered fan rotor animation.
+
+## Curtains
+
+Curtain controls change the scale and visual position of the curtain panels to represent open and closed states.
+
+## Doors and Sliding Panels
+
+The interface supports opening and closing authored doors and sliders, including bulk open-all and close-all actions.
+
+The rendered geometry responds to the selected state. Supported door and gate states are also considered by the runtime collision world.
+
+## Cabinets and Drawers
+
+Supported cabinet doors and drawers can be interacted with directly in the 3D scene. Their node transforms animate between the authored closed and open positions.
+
+---
+
+# 🌤️ Lighting and Environment
+
+The environment system provides three scene presets:
+
+| Preset | Description |
+|---|---|
+| Day | Daylight environment with blue sky and neutral illumination |
+| Golden | Warm, low-angle sunlight and warmer environment colours |
+| Night | Dark environment with stars and a cool, low-intensity sky |
+
+Two rendering-quality modes are available:
+
+### Interactive
+
+- Lower device-pixel ratio.
+- Reduced live-light pool.
+- No presentation post-processing stack.
+- Intended for responsive interaction.
+
+### Presentation
+
+- Shadow rendering.
+- Increased live-light pool.
+- Higher device-pixel ratio where available.
+- SMAA anti-aliasing.
+- Bloom.
+- Vignette.
+
+The system measures and displays a client-side FPS estimate. No cross-device GPU performance benchmark is claimed in this repository.
+
+---
+
+# 🎬 Cinematic and Dollhouse Modes
+
+## Cinematic Tours
+
+Camera keyframes are stored in `cinematics.json` and grouped into exterior and interior sequences.
+
+The cinematic controller interpolates camera position, look direction, and field of view between authored shots.
+
+## Dollhouse Decomposition
+
+The dollhouse controller animates:
+
+- First-floor elevation.
+- Roof elevation.
+- Room-level horizontal separation.
+
+This provides a visual explanation of the house's overall organisation and allows interior components to be inspected without navigating through the building.
+
+---
+
+# 🏗️ System Architecture
+
+The application is divided into four major engineering domains:
+
+1. **Procedural scene generation** — Python and NumPy geometry generation, semantic extraction, collider construction, and navigation-grid creation.
+2. **3D asset production** — GLB export, web optimisation, and Blender scene authoring.
+3. **Interactive frontend** — React, TypeScript, React Three Fiber, Three.js, and Zustand.
+4. **Spatial backend** — FastAPI and SQLite endpoints for semantic queries, routes, device-state storage, and simulated room telemetry.
+
+## High-Level Architecture
+
+```mermaid
+flowchart TB
+    A[Spatial Generator<br/>Python + NumPy] --> B[Generated Spatial Dataset]
+    B --> C[Visual GLB]
+    B --> D[Semantic JSON]
+    B --> E[Collision JSON]
+    B --> F[Navigation Grid]
+    B --> G[Cinematics JSON]
+
+    C --> H[Asset Optimisation<br/>glTF Transform]
+    D --> I[Frontend Public Scene Assets]
+    E --> I
+    F --> I
+    G --> I
+    H --> I
+
+    J[Blender Source + Renders] -. design and visual authoring .-> C
+
+    I --> K[React + TypeScript Frontend]
+    K --> L[React Three Fiber / Three.js]
+    K --> M[Zustand Runtime State]
+    K --> N[Client Search + A* Navigation]
+
+    K -. optional API calls .-> O[FastAPI Backend]
+    O --> P[SQLite]
+    O --> Q[Search / Route Services]
+    O --> R[Simulated Room Telemetry]
+
+    K --> S[Vercel Static Deployment]
+```
+
+## Runtime Data Flow
+
+```text
+                    GENERATED HOUSE DATA
+                             │
+             ┌───────────────┼───────────────┐
+             │               │               │
+             ▼               ▼               ▼
+          HOUSE GLB      SEMANTIC JSON   COLLISION / NAV
+             │               │               │
+             └───────────────┼───────────────┘
+                             │
+                             ▼
+                    FRONTEND DATA LOADER
+                             │
+                 ┌───────────┴───────────┐
+                 │                       │
+                 ▼                       ▼
+            3D SCENE                SPATIAL RUNTIME
+                 │                       │
+                 ▼              ┌────────┼────────┐
+             RENDERING           ▼        ▼        ▼
+                              SEARCH   ROUTING  CONTROLS
+                 │              │        │        │
+                 └──────────────┴────────┴────────┘
+                                │
+                                ▼
+                         BROWSER EXPERIENCE
+```
+
+---
+
+# 🧩 Spatial Data Model
+
+The generated semantic dataset contains the entities required by the interactive viewer.
+
+## Floors
+
+Each floor has a stable identifier, elevation, floor index, and associated room identifiers.
+
+## Rooms
+
+Room records contain:
+
+- Stable room ID.
+- House and floor identifiers.
+- Name, category, and kind.
+- Search keywords.
+- Dimensions and area.
+- Centre and bounding box.
+- Clear walkable rectangle.
+- Polygon boundary.
+- Navigable area and agent radius.
+- Connected-room relationships.
+- Object count.
+- Wall, floor, and ceiling material references.
+
+## Objects
+
+Object records contain:
+
+- Stable object ID.
+- Scene node reference.
+- Name and category.
+- Room and floor association.
+- Position and centre.
+- Rotation.
+- Dimensions and bounding box.
+- Search keywords.
+- Solid / non-solid classification.
+- Optional smart-device metadata.
+
+## Doors and Lights
+
+Door records describe connected rooms, opening state, type, width, and centre position.
+
+Light records describe type, colour, intensity, distance, shadow settings, group, position, and target data.
+
+## Spatial Coordinate Convention
+
+| Convention | Value |
+|---|---|
+| Linear units | Metres |
+| Up axis | Y |
+| Floor 0 elevation | 0.0 m |
+| Floor 1 elevation | 3.4 m |
+| Street direction | −Z |
+| Garden direction | +Z |
+| Floor-to-floor interval | 3.4 m |
+
+All generated spatial assets are expected to use a consistent coordinate frame.
+
+---
+
+# 🧭 Navigation Architecture
+
+The navigation implementation is available in both the frontend and backend code paths.
+
+| Component | Responsibility |
+|---|---|
+| `navgrid.json` | Encodes walkable cells for each floor and portal links |
+| `frontend/src/lib/nav.ts` | Browser-side multi-floor A* implementation |
+| `spatial/luxe/nav.py` | Python navigation generator / route implementation |
+| `backend/app/luxe_nav/nav.py` | Backend route service |
+| `frontend/src/lib/collision.ts` | Runtime collision and movement resolution |
+| `frontend/src/lib/actions.ts` | Search-to-focus and route orchestration |
+
+## Why Separate Navigation from Rendering?
+
+A visual mesh may contain decorative, transparent, or non-traversable geometry. A visually open region may still be blocked by furniture or a rail, while a door may become traversable only when opened.
+
+A separate navigation representation permits route behaviour to be evaluated as a spatial problem instead of inferred from the rendered appearance.
+
+---
+
+# 🔌 Backend and API
+
+The backend is a FastAPI service with SQLite-backed state tables.
+
+The browser application also supports client-side search and route computation using the bundled spatial dataset. The backend is therefore an additional service layer rather than a prerequisite for loading the house viewer.
+
+## API Endpoints
+
+### Health and Scene
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/health` | Service status, scene provenance and counts |
+| `GET` | `/api/scene` | Scene metadata, floors, and entity counts |
+| `GET` | `/api/semantic` | Full semantic dataset |
+
+### Rooms and Objects
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/rooms` | List rooms; optional `floor` filter |
+| `GET` | `/api/rooms/{room_id}` | Room detail and associated objects |
+| `GET` | `/api/objects` | List objects; optional category, room, and floor filters |
+| `GET` | `/api/objects/{obj_id}` | Object detail |
+| `GET` | `/api/doors` | Door definitions |
+| `GET` | `/api/lights` | Light-anchor definitions |
+
+### Search and Navigation
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/search?q=` | Semantic room and object search |
+| `POST` | `/api/route` | Route calculation and collider validation |
+
+Example route request:
 
 ```json
 {
-  "is_real_site_capture": false,
-  "is_colmap_output": false
+  "from_floor": 0,
+  "from_x": 4.8,
+  "from_z": -4.5,
+  "to_id": "ff-master-bedroom"
 }
 ```
 
-## Run the Synthetic Experiment
+The route API accepts source and destination IDs or explicit coordinates and floor values. A successful response includes route waypoints, distance, room transitions, floor changes, and validation violations.
 
-```bash
-python -m reconstruction.synthetic.simulate_scan --scene assets/scenes/demo-block-a --cand 3000000
+### Device State and Telemetry
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `GET` | `/api/devices` | Read stored device states |
+| `PUT` | `/api/devices/{device_id}` | Store a device-state payload in SQLite |
+| `GET` | `/api/telemetry` | Return generated telemetry for rooms |
+| `GET` | `/api/telemetry/{room_id}` | Return generated telemetry for one room |
+
+Example device-state payload:
+
+```json
+{
+  "kind": "light",
+  "state": {
+    "on": false
+  }
+}
 ```
 
-The experiment writes its outputs under:
-
-```text
-assets/scenes/demo-block-a/scan/
-```
-
-## Run the Registration Demonstration
-
-```bash
-python -m reconstruction.registration.run_demo
-```
-
-The registration demonstration uses the known synthetic environment for its reference geometry. It does not establish real-world metric registration accuracy.
+**Integration boundary:** the current Smart Home controls manipulate the rendered scene through the frontend state store. The backend exposes device-state endpoints for API clients, but the current frontend controls do not synchronise their state to physical hardware or an external home-automation platform.
 
 ---
 
-# 📷 Real-World Reconstruction: Target Pipeline
+# 📡 Room Telemetry
 
-The intended product direction is to transform ordinary smartphone imagery into a structured, navigable indoor environment.
+When the API is available, the Smart Home panel can display room-level telemetry values.
 
-The real-capture pipeline remains a target validation path and has not been validated on real indoor footage in the current Round 1 prototype.
+The current backend generates these values synthetically; they are not readings from installed sensors.
 
-```mermaid
-flowchart LR
+The telemetry model includes:
 
-    A["Smartphone Photos / Video"]
+- Temperature (°C)
+- Relative humidity (%)
+- CO₂ concentration (ppm)
+- Occupancy state
+- Power estimate (W)
+- Illuminance estimate (lux)
 
-    --> B["Capture SOP and Frame QA"]
+The endpoint returns a `simulated: true` flag to distinguish generated values from physical sensor data.
 
-    --> C["Keyframe Selection"]
+This layer provides a clear integration point for future environmental sensor systems without misrepresenting the current prototype as a live smart-home installation.
 
-    --> D["SfM / MVS Reconstruction"]
+---
 
-    --> E["Scale and Gravity Alignment"]
+# 🎨 Blender and Architectural Deliverables
 
-    --> F["Geometry Processing"]
+The repository includes an editable Blender project and architectural documentation.
 
-    --> G["Room and POI Semantics"]
+## Blender Source
 
-    --> H["Collision and Walkability"]
+- `blender/NAMMA_LUXE_HOUSE_01.blend` — editable house scene.
+- `blender/build_blend.py` — imports the source GLB and builds collections, cameras, lights, animation actions, and metadata.
+- `blender/render_all.py` — renders the predefined exterior, dollhouse, and room-camera set.
+- `blender/quick_preview.py` — lightweight preview utility.
 
-    --> I["GLB and JSON Scene Package"]
+The included Blender scene contains authored collections for architecture, furniture, lighting, smart devices, landscape, cameras, and animation rigs.
 
-    --> J["Browser Digital Twin"]
-```
+## Architectural Drawings
 
-## Target Processing Stages
+The project includes SVG drawings such as:
 
-| Stage | Intended operation |
-|---|---|
-| Capture | Record overlapping indoor walkthrough footage |
-| Frame QA | Identify blur, exposure issues and insufficient overlap |
-| Keyframe Selection | Select frames with useful visual coverage |
-| SfM | Estimate camera poses and sparse geometry |
-| MVS | Generate a denser geometric representation |
-| Metric Alignment | Recover scale and gravity-aligned orientation |
-| Geometry Processing | Interpret surfaces and spatial boundaries |
-| Semantic Processing | Assign room and POI identities |
-| Navigation Processing | Derive obstacles and walkability |
-| Scene Packaging | Produce viewer-compatible GLB and JSON assets |
+- Site plan.
+- Ground-floor plan.
+- First-floor plan.
+- Furniture plans.
+- Front elevation.
+- Rear elevation.
+- Right elevation.
+- Section A–A.
 
-This pipeline requires validation against independent physical measurements and site observations before reconstruction accuracy or real-world navigation performance can be claimed.
+## Schedules
+
+CSV schedules are included for:
+
+- Rooms.
+- Furniture.
+- Materials.
+- Doors and windows.
+
+These files provide a tabular companion to the generated spatial model.
 
 ---
 
 # ⚙️ Technology Stack
 
-## Scene Generation and Geometry
+## Frontend
 
-- Python
+- React 18
+- TypeScript 5
+- Vite 5
+- React Three Fiber 8
+- Three.js 0.169
+- React Three Drei
+- React Three Postprocessing
+- Zustand
+- Tailwind CSS 3
+
+## Backend
+
+- Python 3.10+
+- FastAPI
+- Uvicorn
+- Pydantic 2
+- SQLite
 - NumPy
-- SciPy
-- Pillow
-- Procedural geometry generation
+
+## Geometry and 3D Production
+
+- Python / NumPy procedural geometry
 - glTF / GLB
+- glTF Transform CLI
+- Blender Python API (`bpy`)
+- Cycles rendering
 
-## Browser Application
+## Spatial Algorithms
 
-- HTML
-- CSS
-- Vanilla JavaScript
-- Custom WebGL2 renderer
+- Eight-connected A*
+- Grid-based walkability
+- Portal graph for floor transitions
+- Line-of-sight smoothing
+- AABB collision checks
+- Deterministic synonym-aware semantic search
 
-## Spatial Computing
+## Deployment
 
-- Walkability grids
-- Collider geometry
-- A* pathfinding
-- Portal graph
-- Coordinate-frame registration utilities
-- Synthetic point-cloud experiments
-
-## Packaging and Deployment
-
-- Python packaging utilities
-- Standalone HTML application
-- GitHub
-- Vercel
-
-**Note:** The current viewer is not a Next.js, React, Three.js, or FastAPI deployment. The README describes the actual shipped implementation.
+- Vercel for the frontend
+- Render configuration for the optional API service
 
 ---
 
@@ -690,54 +963,42 @@ This pipeline requires validation against independent physical measurements and 
 
 ## Prerequisites
 
-For the prebuilt viewer:
+Install the following before running the complete local application:
 
-- Python 3
-- A modern browser
-- WebGL2 support
+- Node.js 18 or later.
+- npm.
+- Python 3.10 or later.
+- Git (for cloning the repository).
 
-For rebuilding the synthetic scene:
-
-- Python 3.10+
-- pip
+Blender is **not required** to run the prebuilt web twin. It is required only for Blender-specific editing and rendering tasks.
 
 ## 1. Clone the Repository
 
 ```bash
 git clone https://github.com/tejaswee-06/Namma_Space.git
-
 cd Namma_Space
 ```
 
-## 2. Run the Existing Viewer
+> If HOUSE 01 is stored in a subdirectory of the repository, change into the directory that contains `INSTALL.bat`, `START.bat`, `frontend/`, `backend/`, and `spatial/` before continuing.
 
-The quickest way to run NAMMA TWIN is to serve the prebuilt standalone HTML application.
+## 2. Windows Quick Start
 
-### Windows PowerShell
+The project includes two convenience scripts.
 
-```powershell
-py -m http.server 8000
-```
+1. Double-click `INSTALL.bat` to create the backend virtual environment, install Python requirements, and install frontend npm dependencies.
+2. Double-click `START.bat` to start the API and Vite development server.
+3. The web application opens at `http://127.0.0.1:5173`.
+4. The API is available at `http://127.0.0.1:8000`.
+5. Double-click `STOP.bat` to stop the processes started by this project.
 
-### macOS / Linux
+The prebuilt GLB and JSON scene assets are already bundled, so Blender is not needed for normal viewing.
 
-```bash
-python3 -m http.server 8000
-```
+## 3. Manual Backend Setup
 
-Open your browser:
-
-```text
-http://localhost:8000/dist/namma-twin.html
-```
-
-The viewer is packaged as a standalone HTML application. Node.js and npm are not required to run this prebuilt viewer.
-
-## 3. Create a Python Virtual Environment
-
-To regenerate the synthetic scene:
+Open a terminal in the project root:
 
 ```bash
+cd backend
 python -m venv .venv
 ```
 
@@ -753,139 +1014,222 @@ python -m venv .venv
 source .venv/bin/activate
 ```
 
-## 4. Install Dependencies
+Install backend dependencies:
 
 ```bash
 python -m pip install --upgrade pip
-
-python -m pip install numpy scipy pillow pytest
+pip install -r requirements.txt
 ```
 
-## 5. Generate the Synthetic Environment
+Start FastAPI:
 
 ```bash
-python -m reconstruction.synthetic.build_building --out assets/scenes/demo-block-a
+python -m uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
 ```
 
-## 6. Run the Synthetic Scan Experiment
+API base URL:
 
-```bash
-python -m reconstruction.synthetic.simulate_scan --scene assets/scenes/demo-block-a --cand 3000000
+```text
+http://127.0.0.1:8000
 ```
 
-## 7. Run Registration Demonstration
+API health check:
 
-```bash
-python -m reconstruction.registration.run_demo
+```text
+http://127.0.0.1:8000/api/health
 ```
 
-## 8. Package the Browser Viewer
+## 4. Manual Frontend Setup
+
+Open a second terminal in the project root:
 
 ```bash
-python -m tools.pack_viewer --scene assets/scenes/demo-block-a --out dist
-```
-
-## 9. Start the Viewer
-
-```bash
-py -m http.server 8000
+cd frontend
+npm install
+npm run dev
 ```
 
 Open:
 
 ```text
-http://localhost:8000/dist/namma-twin.html
+http://127.0.0.1:5173
 ```
+
+The Vite development server proxies `/api` requests to `http://127.0.0.1:8000` by default. The frontend can still load the bundled scene and perform client-side search and route calculations if the backend is unavailable.
+
+## 5. Production Frontend Build
+
+From the `frontend/` directory:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+npm run preview
+```
+
+## 6. Environment Configuration
+
+The repository provides `.env.example` files for local and deployment configuration.
+
+Important variables include:
+
+| Variable | Purpose |
+|---|---|
+| `VITE_API_URL` | Public base URL of the FastAPI service for the frontend |
+| `VITE_PROXY_TARGET` | Local Vite proxy target; defaults to `http://127.0.0.1:8000` |
+| `CORS_ORIGINS` | Explicit browser origins allowed by FastAPI |
+| `CORS_ORIGIN_REGEX` | Optional regular-expression origin allowance |
+| `DB_PATH` | SQLite database path |
+| `DATA_DIR` | Optional directory containing semantic, collider, and navgrid JSON files |
+
+For local development, the Vite proxy is sufficient when the backend is running on port 8000.
+
+For a deployed frontend, set `VITE_API_URL` to the actual deployed API origin and configure the API's CORS settings to allow the frontend domain.
 
 ---
 
-# 🧪 Reproducibility and Testing
+# 🧪 Testing and Validation
 
-Run the navigation tests:
+The repository includes Python and frontend test suites.
+
+## Python Tests
+
+Run from the project root:
 
 ```bash
-python -m pytest reconstruction/tests/test_navigation.py -v
+python -m pytest tests -q
 ```
 
-The committed navigation suite has passed 13 out of 13 tests on the authored synthetic scene.
+The recorded test report documents **12 passed** for generator data, navigation connectivity, route validation, semantic search, API, device-state endpoints, and simulated telemetry.
 
-The test suite checks route generation and validation against the supplied environment.
+## Frontend Tests
 
-Re-running the tests on modified scene assets may produce different results.
+Run from the frontend directory:
 
-## Synthetic Experiment Reproducibility
+```bash
+npm test
+```
 
-The synthetic scan report is stored alongside the scan experiment outputs.
+The recorded test report documents **9 passed** for pathfinding, search intents, collision, and stair logic.
 
-For reproducible inspection, retain:
+## Type Checking
 
-- Scene build statistics.
-- Synthetic scan report.
-- Camera metadata.
-- Point-cloud outputs.
-- Registration report.
-- Navigation test results.
+```bash
+cd frontend
+npm run typecheck
+```
 
-Do not interpret synthetic residuals as independent real-world measurements.
+The recorded test report reports a clean TypeScript type check.
+
+## Production Build
+
+```bash
+cd frontend
+npm run build
+```
+
+The recorded test report reports a successful Vite production build.
+
+## Route Validation
+
+The Python test suite checks routes from the gate to the non-screen rooms in the authored dataset, including multi-floor routing through the staircase and sampled route checks against blocking colliders.
+
+The test report records 20 non-screen room destinations routed from the gate with zero route-validation violations.
+
+## Browser Checks
+
+The recorded headless Chromium checks cover:
+
+- Application load.
+- Search result to route card.
+- Floor view switching.
+- Dollhouse mode switching.
+- Walk mode entry.
+
+**Not verified in the recorded test report:** manual pointer-lock walkthrough by a human, real GPU frame-rate, mobile devices, and cloud deployment execution. Windows batch scripts are included but were not executed in the reported test environment.
+
+For exact scope and execution notes, see [`docs/TEST_REPORT.md`](docs/TEST_REPORT.md).
 
 ---
 
 # 📁 Repository Structure
 
 ```text
-NAMMA-TWIN/
-│
-├── .github/
-│
-├── apps/
+NAMMA_LUXE_TWIN_HOUSE01/
 │
 ├── assets/
-│   ├── reference/
-│   └── scenes/
-│       └── demo-block-a/
-│           ├── visual.glb
-│           ├── collision.glb
-│           ├── semantic.json
-│           ├── colliders.json
-│           ├── navgrid.json
-│           ├── build_stats.json
-│           └── scan/
+│   ├── reference/                 # Visual reference board and source images
+│   └── scenes/house-01/            # GLB scene and collision assets
+│
+├── backend/
+│   ├── app/
+│   │   ├── main.py                # FastAPI endpoints
+│   │   ├── search.py              # Backend semantic search
+│   │   └── luxe_nav/              # Route planning and validation
+│   ├── data/                      # Backend spatial JSON data
+│   └── requirements.txt
 │
 ├── blender/
+│   ├── NAMMA_LUXE_HOUSE_01.blend  # Editable Blender project
+│   ├── build_blend.py
+│   ├── render_all.py
+│   └── quick_preview.py
 │
-├── database/
+├── data/
+│   └── scene_registry.json        # Scene provenance registry
 │
-├── dist/
-│   ├── index.html
-│   └── namma-twin.html
-│
-├── docker/
+├── deployment/
+│   ├── render.yaml
+│   └── vercel.json
 │
 ├── docs/
-│   ├── competition/
-│   └── media/
+│   ├── drawings/                  # SVG architectural drawings
+│   ├── phase0/                    # Input and architecture audit
+│   ├── renders/                   # Exterior and interior renders
+│   ├── schedules/                 # Room, furniture, material, door schedules
+│   ├── ARCHITECTURE.md
+│   ├── TEST_REPORT.md
+│   └── NAMMA_TWIN_Comprehensive_Project_Bible.pdf
 │
-├── reconstruction/
-│   ├── synthetic/
-│   ├── registration/
-│   ├── navigation_geometry/
-│   └── tests/
+├── frontend/
+│   ├── public/scenes/house-01/     # GLB + semantic + collision + nav assets
+│   ├── src/
+│   │   ├── lib/                   # Search, routing, collision, data, actions
+│   │   ├── scene/                 # House, lights, rigs, overlays
+│   │   ├── ui/                    # Search, spaces, smart home, panels
+│   │   ├── App.tsx
+│   │   ├── main.tsx
+│   │   └── store.ts
+│   ├── package.json
+│   ├── vite.config.ts
+│   └── dist/                      # Prebuilt frontend distribution
+│
+├── namma_base/                    # Preserved earlier NAMMA-TWIN foundation
+│   ├── reconstruction/            # Legacy reconstruction pipeline modules
+│   ├── viewer/                    # Legacy viewer
+│   ├── assets/                    # Legacy synthetic demo scene
+│   └── tools/                     # Legacy packaging utilities
 │
 ├── scripts/
+│   ├── build_assets.py            # Generate, optimise, and publish scene assets
+│   └── generate.py                # Generate spatial dataset
 │
-├── tools/
-│   ├── pack_viewer.py
-│   └── render_glb.py
+├── spatial/
+│   ├── luxe/                      # HOUSE 01 procedural generator
+│   └── generated/                 # Generated room, object, light, door, nav data
 │
-├── viewer/
-│   ├── template.html
-│   └── js/
-│       ├── 10_core.js
-│       ├── 20_gl.js
-│       ├── 30_nav.js
-│       ├── 40_app.js
-│       └── 50_ui.js
+├── tests/
+│   └── test_twin.py               # Python integration and navigation tests
 │
+├── INSTALL.bat
+├── START.bat
+├── STOP.bat
+├── render.yaml
+├── vercel.json
 └── README.md
 ```
 
@@ -893,110 +1237,207 @@ NAMMA-TWIN/
 
 # ☁️ Deployment
 
-The current standalone browser viewer is deployed using Vercel.
+## Frontend — Vercel
 
-### Live Application
+The frontend is configured for Vercel deployment through the repository-root `vercel.json`.
 
-**Main URL:**
-
-https://namma-twin.vercel.app/
-
-**Direct Viewer:**
-
-https://namma-twin.vercel.app/namma-twin.html
-
-### Deployment Configuration
-
-| Setting | Value |
+| Setting | Configuration |
 |---|---|
-| Framework | Other |
-| Root Directory | `./` |
-| Build Command | Empty |
-| Install Command | Empty |
-| Output Directory | `dist` |
+| Framework | Vite / Other |
+| Build command | `cd frontend && npm install && npm run build` |
+| Output directory | `frontend/dist` |
+| Frontend environment variable | `VITE_API_URL` (only when using a separately deployed API) |
 
-The `dist/index.html` file redirects the root application URL to the standalone viewer.
+**Live application:** https://namma-project-sable.vercel.app/
 
-### Automatic Deployment
+The frontend loads the bundled house GLB and JSON assets from its static scene directory.
 
-The project is connected to GitHub.
+## Backend — Render Configuration
 
-Push an update to the production branch:
+A `render.yaml` configuration is included for the FastAPI service.
 
-```bash
-git add .
+The API service is separate from the Vercel frontend. To use it in a deployed environment:
 
-git commit -m "Update NAMMA TWIN"
+1. Deploy the backend service using the included Render configuration.
+2. Set `CORS_ORIGINS` to the exact deployed frontend origin.
+3. Set `DB_PATH` to a writable persistent location if state must survive service restarts.
+4. Set `VITE_API_URL` in the Vercel project to the actual API base URL.
+5. Trigger a new frontend build so the configured API URL is included.
 
-git push origin main
-```
-
-Vercel automatically publishes the updated static output when the connected Git integration is configured for production deployments.
+The repository contains deployment configuration; a successful cloud deployment of the backend is not asserted by the included test report.
 
 ---
 
-# ⚠️ Limitations and Engineering Boundaries
+# 🎬 End-to-End Demo Workflow
 
-The current Round 1 implementation is deliberately scoped.
+A recommended product walkthrough is:
 
-The following capabilities are not claimed as completed:
+```text
+1. OPEN THE LIVE HOUSE TWIN
+          │
+          ▼
+2. INSPECT THE EXTERIOR IN ORBIT MODE
+          │
+          ▼
+3. SWITCH BETWEEN GROUND AND FIRST FLOOR
+          │
+          ▼
+4. REMOVE THE ROOF / INSPECT CUTAWAY
+          │
+          ▼
+5. OPEN THE FLOOR PLAN
+          │
+          ▼
+6. SEARCH FOR A ROOM OR OBJECT
+          │
+          ▼
+7. SELECT THE MASTER BEDROOM OR A FIXTURE
+          │
+          ▼
+8. REQUEST A ROUTE FROM THE GATE
+          │
+          ▼
+9. INSPECT DISTANCE AND ROOM TRANSITIONS
+          │
+          ▼
+10. SELECT WALK IT
+          │
+          ▼
+11. ENTER FIRST-PERSON WALK MODE
+          │
+          ▼
+12. OPEN THE SMART HOME PANEL
+          │
+          ▼
+13. CHANGE LIGHTING / FAN / CURTAIN / DOOR STATES
+          │
+          ▼
+14. SWITCH DAY → GOLDEN → NIGHT
+          │
+          ▼
+15. PLAY THE EXTERIOR OR INTERIOR CINEMATIC TOUR
+          │
+          ▼
+16. OPEN DOLLHOUSE MODE AND SEPARATE THE FLOORS
+```
 
-- No real indoor smartphone photo/video capture is included in the submitted scene.
-- No production SfM/MVS reconstruction from real user footage is integrated into the deployed viewer.
-- The synthetic scan simulator is not COLMAP.
-- No real-site metric accuracy has been established.
-- No real-world reconstruction completeness has been measured.
-- No production automatic room or object recognition is included.
-- No production capture-upload backend or asynchronous reconstruction service is deployed.
-- No AR navigation is included in the current prototype.
-- Navigation tests do not certify safe movement in a physical building.
-- Real-device frame-rate and loading benchmarks have not been established.
+This sequence demonstrates the relationship between the rendered scene, semantic data, route model, and interactive controls.
 
-These boundaries are documented to distinguish demonstrated software functionality from the remaining work required for a capture-derived indoor digital twin.
+---
+
+# 🏆 What Makes NAMMA LUXE TWIN Different?
+
+Many 3D house viewers stop at showing a visually appealing model.
+
+NAMMA LUXE TWIN is structured around the interaction between geometry, semantics, and navigation.
+
+| Conventional 3D Presentation | NAMMA LUXE TWIN |
+|---|---|
+| Camera-only inspection | Orbit, walk, cinematic, and dollhouse modes |
+| Static room labels | Structured room and object records |
+| Manual visual lookup | Search with intent parsing and synonym expansion |
+| Floor-by-floor images | Unified 3D house with floor visibility controls |
+| Decorative route line | A* route over authored walkability constraints |
+| Implicit stair movement | Explicit inter-floor portal connection |
+| Static device appearance | Runtime lighting, fan, curtain, door, and slider controls |
+| One visual representation | Separate visual, semantic, collision, and navigation assets |
+
+## The Core Product Loop
+
+```text
+        INSPECT THE HOUSE
+               │
+               ▼
+        DISCOVER A SPACE
+               │
+               ▼
+        RESOLVE ITS IDENTITY
+               │
+               ▼
+        CALCULATE A VALID ROUTE
+               │
+               ▼
+        MOVE THROUGH THE MODEL
+               │
+               ▼
+        INTERACT WITH SCENE ELEMENTS
+               │
+               ▼
+        UNDERSTAND THE HOUSE AS DATA
+```
+
+The differentiator is not a claim of a new photogrammetry algorithm. It is the structured coupling of a detailed interactive house scene with searchable semantics, explicit walkability, multi-floor routing, and stateful scene interaction.
+
+---
+
+# ⚠️ Provenance, Scope, and Limitations
+
+Transparency is part of the system design.
+
+## Scene Provenance
+
+HOUSE 01 is labelled `synthetic_designed` in the scene metadata and in the viewer interface.
+
+The model was procedurally generated from a designed architectural programme and rendered through Blender. It is not derived from a real occupied-home smartphone scan.
+
+The earlier NAMMA-TWIN foundation and its reconstruction modules are preserved under `namma_base/`. Their presence in the repository does not mean that the current HOUSE 01 model was reconstructed from camera footage.
+
+## Known Engineering Limits
+
+- Textures and furniture are procedurally authored rather than scanned or sourced as high-detail designer assets.
+- Collision handling uses custom AABB geometry and movement resolution rather than a general-purpose physics engine such as Rapier.
+- Smart-home controls simulate scene state; they are not connected to physical hardware.
+- Room telemetry is generated by the backend simulator and is not sourced from physical sensors.
+- Real-world capture-to-reconstruction performance has not been validated for HOUSE 01.
+- Navigation correctness has been tested on the authored synthetic scene; this is not a guarantee of safety in a real building.
+- GPU performance has not been benchmarked across representative consumer devices.
+- Pointer-lock walkthrough behaviour has not been manually verified across all browsers and devices.
+- Windows batch launch scripts and cloud backend deployment configuration are included, but the test report does not claim they were executed in the reported test environment.
+
+These boundaries distinguish implemented product behaviour from integrations that remain future work.
 
 ---
 
 # 🛣️ Development Roadmap
 
-| Workstream | Engineering Objective |
+| Workstream | Next Engineering Objective |
 |---|---|
-| Capture | Execute a repeatable smartphone walkthrough procedure |
-| Frame Quality | Assess blur, exposure and spatial coverage |
-| Reconstruction | Validate SfM/MVS on real indoor footage |
-| Metric Registration | Align scale and gravity using reference measurements |
-| Semantic Processing | Identify and annotate rooms, doors and POIs |
-| Spatial Navigation | Derive walkable regions and obstacle geometry |
-| Viewer Integration | Replace synthetic assets with capture-derived scene packages |
-| Performance | Measure load time and interaction performance on representative devices |
-| AR Extension | Investigate live phone-based spatial guidance |
-
-Each stage requires independent validation before being treated as an established product capability.
+| Capture | Execute a repeatable smartphone walkthrough SOP on an accessible real interior |
+| Reconstruction | Validate frame extraction, SfM/MVS, registration, and mesh generation on real footage |
+| Metric Alignment | Establish scale and gravity using independent reference measurements |
+| Semantic Mapping | Derive and review rooms, objects, doors, and POIs from captured geometry |
+| Navigation | Generate and validate walkability and obstacle geometry on a measured site |
+| Scene Publishing | Replace the synthetic scene package with a capture-derived scene without rewriting the viewer |
+| Smart-Home Integration | Connect scene controls to a clearly defined device adapter and real hardware sandbox |
+| Telemetry | Replace simulated values with authenticated sensor sources and timestamped measurements |
+| Performance | Benchmark load time, memory, GPU frame time, and interaction latency across devices |
+| Accessibility | Expand keyboard controls, interaction affordances, and reduced-motion support |
+| AR | Evaluate phone-based live navigation after real-site registration is validated |
 
 ---
 
 # 👥 Team TWOPOINTERS
 
-| Member | Role |
+| Member | Responsibility |
 |---|---|
-| **Tejaswee Rajput** | Team Lead |
+| **Tejaswee Rajput** | Team Lead; product direction and system integration |
 | **Sohana Pilli** | Team Member |
 | **Rahul Sharma** | Team Member |
 
-**Competition:** Namma Space  
-**Institution:** Techfest, IIT Bombay  
-**Edition:** 2026–27
+**Competition:** Techfest IIT Bombay — Namma Space 2026–27  
+**Project:** NAMMA LUXE TWIN — HOUSE 01
 
 ---
 
 <div align="center">
 
-# 🏛️ NAMMA TWIN
+# 🏡 NAMMA LUXE TWIN
 
-### Explore the space. Understand the structure. Navigate with constraints.
+### A house is more than a model. It is geometry, meaning, and movement.
 
-[🌐 Open Live Application](https://namma-project-sable.vercel.app/)
+[🌐 Explore HOUSE 01](https://namma-project-sable.vercel.app/)
 
-[💻 Explore Source Code](https://github.com/tejaswee-06/Namma_Space)
+[💻 View Source Code](https://github.com/tejaswee-06/Namma_Space)
 
 **Built by Team TWOPOINTERS**
 
