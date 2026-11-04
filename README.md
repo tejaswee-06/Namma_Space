@@ -9,7 +9,7 @@
 
 **TEAM TWOPOINTERS**
 
-[🌐 Live Application](https://namma-twin.vercel.app/) · [💻 GitHub Repository](https://github.com/tejaswee-06/Namma_Space)
+[🌐 Live Application](https://namma-project-sable.vercel.app/) · [💻 GitHub Repository](https://github.com/tejaswee-06/Namma_Space)
 
 ![Prototype](https://img.shields.io/badge/Stage-Round%201%20Prototype-315A79?style=for-the-badge)
 ![WebGL](https://img.shields.io/badge/Rendering-Custom%20WebGL2-6B4F9B?style=for-the-badge)
@@ -994,7 +994,7 @@ Each stage requires independent validation before being treated as an establishe
 
 ### Explore the space. Understand the structure. Navigate with constraints.
 
-[🌐 Open Live Application](https://namma-twin.vercel.app/)
+[🌐 Open Live Application](https://namma-project-sable.vercel.app/)
 
 [💻 Explore Source Code](https://github.com/tejaswee-06/Namma_Space)
 
